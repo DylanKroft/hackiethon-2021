@@ -4,15 +4,12 @@ import "./MyButton.css"
 import styled from 'styled-components'
 
 
-const MyButton = ({ButtonText}) => {
+const MyButton = ({ButtonText, handleClick}) => {
 
-    const handleClick = () => {
-        console.log("hi")
-    }
     return (
     <>  
         <Container>
-            <But onClick={handleClick}>
+            <But onClick =  {handleClick}>
                 {ButtonText}
             </But>
         </Container>

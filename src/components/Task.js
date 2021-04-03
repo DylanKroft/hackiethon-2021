@@ -1,10 +1,24 @@
 import styled from 'styled-components'
 
+const tasklist = [
+    {
+        name : 'Hello',
+        id: 1
+    },
+    {
+        name : 'Hi',
+        id: 2
+    },
+]
+
 const Task = () => {
     return (
         <Container>
+            {tasklist.map((task) => (
+                <h3> {tasklist.name} </h3>
+            ))}
             
-        </Container>
+        </Container> 
     )
 }
 

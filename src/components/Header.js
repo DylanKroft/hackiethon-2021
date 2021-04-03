@@ -3,12 +3,16 @@ import styled from 'styled-components'
 import MyButton from './MyButton.js';
 
 const Header = ({name}) => {
+
+    const handleClick = () => {
+        console.log("Hi")
+    }
     return (
         <Container>
             <Heading>{name}'s Tasks</Heading>
             <Buttonbox>
-                <MyButton ButtonText={"Add Task"}/>
-                <MyButton ButtonText={"Challenge"}/>
+                <MyButton ButtonText= 'Add Task' onClick = {handleClick}/>
+                <MyButton ButtonText= 'Challenge'  onClick = {handleClick}/>
             </Buttonbox>
 
         </Container>
