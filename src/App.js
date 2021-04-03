@@ -5,10 +5,6 @@ import LoginButton from './components/LoginButton';
 import { useAuth0 } from '@auth0/auth0-react';
 import styled from 'styled-components'
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true, useUnifiedTopology: true});
-
-
 function App() {
   const {isAuthenticated} = useAuth0();
    if (isAuthenticated) {
