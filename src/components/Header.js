@@ -4,6 +4,9 @@ import styled from 'styled-components'
 const Header = () => {
     return (
         <Container>
+            <Heading>
+                My Tasks
+            </Heading>
         </Container>
     )
 }
@@ -15,5 +18,18 @@ const Container = styled.div`
     height: 100px;     
     padding: 0;
     margin: 0;
-    background-color: green;  
+    background-color: #FFF4D1;  
+`
+
+const Heading = styled.div`
+    padding-left: 30px;
+    font-size: 3em;
+    font-weight: 800;
+    width: 50%;
+    height: 100%;
+    line-height: 2em;
+    color: #ffb347;
+
+
+
 `

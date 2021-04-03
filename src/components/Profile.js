@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 import Taskbar from './Taskbar.js';
 import Header from './Header.js';
-
+import GrowPanel from './GrowPanel.js';
 const Profile = () => {
     return (
         <Container>
             <Header />
             <TaskSection>
-                <Buffer />
-                    <Taskbar />
-                <Buffer />
+                <Taskbar />
+                <GrowPanel />
             </TaskSection>
         </Container>
     )
@@ -24,7 +23,7 @@ const Container = styled.div`
     min-height: 600px;
     margin: 0;
     padding: 0;
-    background-color: blue;
+    background-color: #FFF4D1;
     justify-content: center;
     align-items: center;
 
@@ -36,11 +35,7 @@ const Container = styled.div`
 `
 const TaskSection = styled.div`
     width: 100%;
-    background-color: orange;
+    background-color: #FFF4D1;
     display: flex;
     flex-direction: column;
-`
-const Buffer = styled.div`
-    width: 10%;
-    flex-shrink: 100;
 `
