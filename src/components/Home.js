@@ -11,7 +11,6 @@ const Home = () => {
             <div>
                 <Main>
                     <Profile usrName={user.name}/>  
-                    <Profile />  
                 </Main>
             </div>
         )

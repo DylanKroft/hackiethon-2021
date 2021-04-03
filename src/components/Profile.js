@@ -12,7 +12,7 @@ const Profile = ({usrName}) => {
                 <Taskbar />
                 <GrowPanel />
             </TaskSection>
-            <AddTask/>
+            {/* <AddTask/> */}
         </Container>
     )
 }

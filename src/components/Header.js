@@ -36,7 +36,7 @@ const Heading = styled.div`
     min-width: 250px;
     height: 100%;
     line-height: 3em;
-    color: #ffb347;
+    color: #29b39e;
 `
 
 const Buttonbox = styled.div`
