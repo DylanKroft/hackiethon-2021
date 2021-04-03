@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import MyButton from './MyButton.js';
 
-const Header = ({name}) => {
+const Header = ({name, showTaskAdd}) => {
 
     const handleClick = () => {
-        console.log("Hi")
+        showTaskAdd = true;
     }
     return (
         <Container>

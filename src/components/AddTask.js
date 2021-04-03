@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'; 
 
-const AddTask = () => {
+const AddTask = ({email}) => {
 
     const [inputValue, setInputValue] = React.useState("");
 

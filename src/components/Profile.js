@@ -4,14 +4,15 @@ import Header from './Header.js';
 import GrowPanel from './GrowPanel.js';
 import AddTask from './AddTask.js';
 
-const Profile = ({usrName, usrEmail, loggedIn}) => {
+const Profile = ({usrName, usrEmail, loggedIn, displayAddTask, showTaskAdd}) => {
     return (
         <Container>
-            <Header name={usrName}/>
+            <Header name={usrName} showTaskAdd={showTaskAdd}/>
             <TaskSection>
                 <Taskbar email={usrEmail} loggedIn={loggedIn}/>
                 <GrowPanel />
             </TaskSection>
+           {displayAddTask && <AddTask email={usrEmail}/>}
         </Container>
     )
 }

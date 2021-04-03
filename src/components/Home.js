@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import React, { useState, useEffect } from 'react';
 
 
-const Home = () => {
+const Home = ({showTaskAdd}) => {
 
 
     const { user, isAuthenticated } = useAuth0();
@@ -12,7 +12,7 @@ const Home = () => {
         isAuthenticated && (
             <div>
                 <Main>
-                    <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated}/>  
+                    <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated} displayAddTask={showTaskAdd}/>  
                 </Main>
             </div>
         )
