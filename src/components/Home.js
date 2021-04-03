@@ -1,16 +1,18 @@
-import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from './Profile'
 import styled from 'styled-components'
+import React, { useState, useEffect } from 'react';
+
 
 const Home = () => {
+
+
     const { user, isAuthenticated } = useAuth0();
-    console.log(user.email)
     return (
         isAuthenticated && (
             <div>
                 <Main>
-                    <Profile usrName={user.name}/>  
+                    <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated}/>  
                 </Main>
             </div>
         )
@@ -27,4 +29,5 @@ const Main = styled.div`
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
+  background-color: #eaddb6;
 `

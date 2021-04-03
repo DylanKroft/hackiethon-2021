@@ -4,15 +4,14 @@ import Header from './Header.js';
 import GrowPanel from './GrowPanel.js';
 import AddTask from './AddTask.js';
 
-const Profile = ({usrName}) => {
+const Profile = ({usrName, usrEmail, loggedIn}) => {
     return (
         <Container>
             <Header name={usrName}/>
             <TaskSection>
-                <Taskbar />
+                <Taskbar email={usrEmail} loggedIn={loggedIn}/>
                 <GrowPanel />
             </TaskSection>
-            <AddTask/>
         </Container>
     )
 }
@@ -26,7 +25,7 @@ const Container = styled.div`
     min-height: 600px;
     margin: 0;
     padding: 0;
-    background-color: #FFF4D1;
+    background-color: #eaddb6;
     justify-content: center;
     align-items: center;
 
@@ -38,6 +37,6 @@ const Container = styled.div`
 `
 const TaskSection = styled.div`
     width: 100%;
-    background-color: #FFF4D1;
+    background-color: #eaddb6;
     display: flex;
 `

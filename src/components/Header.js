@@ -26,7 +26,7 @@ const Container = styled.div`
     height: 100px;     
     padding: 0;
     margin: 0;
-    background-color: #FFF4D1; 
+    background-color: #eaddb6; 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -34,12 +34,12 @@ const Container = styled.div`
 
 const Heading = styled.div`
     padding-left: 30px;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 800;
     width: 50%;
     min-width: 250px;
     height: 100%;
-    line-height: 3em;
+    line-height: 4em;
     color: #29b39e;
 `
 

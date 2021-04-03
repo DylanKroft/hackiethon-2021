@@ -1,20 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import Task from './Task.js';
+import { EasybaseProvider, useEasybase } from 'easybase-react';
 
-const Taskbar = () => {
-    return (
-        <Container>
-            <Task />
-            <Task />
-            <Task />
-            <Task /><Task />
-            <Task /><Task />
-            <Task /><Task />
-            <Task /><Task />
-            <Task />
-        </Container>
-    )
+const Taskbar = ({email, loggedIn}) => {
+
+    const { Frame, sync, configureFrame } = useEasybase();
+
+    useEffect(() => {
+      configureFrame({tableName: "USERS", limit: 20 });
+      sync();
+    }, []);
+
+    let tasks = [];
+
+    //gets description for username
+    if(loggedIn) {
+        for (let  i = 0; i < Frame().length; i++) {
+            if (Frame()[i].name == email) {
+                tasks = Frame()[i].description.split(",")
+            }
+        }
+    }
+    
+
+    if (loggedIn) {
+        return (
+            <Container>
+            {tasks.map((ele) => (
+                    <Task taskText={ele} />
+                ))}
+
+            </Container>
+        )
+    }
 }
 
 export default Taskbar
@@ -31,7 +50,7 @@ const Container = styled.div`
     overflow-x: hidden;
     justify-content: center;
     align-self: center;
-    background-color: #FFF4D1;
+    background-color: #eaddb6;
 `
 
 
