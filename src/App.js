@@ -1,23 +1,18 @@
 import './App.css';
-import Profile from './components/Profile.js';
-import { Container, Row, Col } from "react-bootstrap";
-import styled from 'styled-components'
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton'
+import Home from './components/Home'
 
 function App() {
   return (
-    <Main>
-      <Profile />  
-      <Profile />  
-    </Main>
+    <>
+    <LoginButton />
+    <LogoutButton />
+    <Home />
+
+    </>
   );
 }
 
 export default App;
 
-const Main = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-
-`
