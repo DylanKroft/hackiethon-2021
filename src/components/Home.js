@@ -3,6 +3,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import JSONPretty from 'react-json-pretty';
 import Profile from './Profile'
 import styled from 'styled-components'
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton'
 
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -21,8 +23,16 @@ const Home = () => {
                 {/* {JSON.stringify(user, null, 2)} */}
             </div>
         )
+        !=isAuthenticated && (
+            <div>
+                <LoginButton />
+                <LogoutButton />
+            </div>
+        )
      )      
 }
+
+
 
 export default Home
 
