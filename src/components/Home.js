@@ -5,17 +5,14 @@ import styled from 'styled-components'
 
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
-
+    console.log(user.email)
     return (
         isAuthenticated && (
             <div>
                 <Main>
-                    <Profile />  
+                    <Profile usrName={user.name}/>  
                     <Profile />  
                 </Main>
-                <img src={user.picture} alt={user.name} />
-                <h2>{user.name}</h2>
-                <p>{user.email}</p>
             </div>
         )
      )      

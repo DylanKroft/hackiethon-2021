@@ -2,14 +2,17 @@ import styled from 'styled-components'
 import Taskbar from './Taskbar.js';
 import Header from './Header.js';
 import GrowPanel from './GrowPanel.js';
-const Profile = () => {
+import AddTask from './AddTask.js';
+
+const Profile = ({usrName}) => {
     return (
         <Container>
-            <Header />
+            <Header name={usrName}/>
             <TaskSection>
                 <Taskbar />
                 <GrowPanel />
             </TaskSection>
+            <AddTask/>
         </Container>
     )
 }

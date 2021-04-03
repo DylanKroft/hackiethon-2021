@@ -18,4 +18,5 @@ const Container = styled.div`
     height: 100vh;
     max-height: 650px;
     max-width: 300px;
+    margin-right: 10px;
 `

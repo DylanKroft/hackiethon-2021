@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import "./MyButton.css"
@@ -11,12 +10,13 @@ const MyButton = ({ButtonText}) => {
         console.log("hi")
     }
     return (
-        <>  <Container>
+    <>  
+        <Container>
             <But onClick={handleClick}>
                 {ButtonText}
             </But>
-            </Container>
-        </>
+        </Container>
+    </>
     )
 }
 

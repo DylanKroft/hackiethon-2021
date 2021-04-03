@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import MyButton from './MyButton.js';
 
-const Header = () => {
+const Header = ({name}) => {
     return (
         <Container>
-            <Heading>My Tasks</Heading>
+            <Heading>{name}'s Tasks</Heading>
             <Buttonbox>
                 <MyButton ButtonText={"Add Task"}/>
                 <MyButton ButtonText={"Challenge"}/>
@@ -30,12 +30,12 @@ const Container = styled.div`
 
 const Heading = styled.div`
     padding-left: 30px;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 800;
-    width: 30%;
+    width: 50%;
     min-width: 250px;
     height: 100%;
-    line-height: 2em;
+    line-height: 3em;
     color: #ffb347;
 `
 
