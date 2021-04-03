@@ -37,5 +37,4 @@ const TaskSection = styled.div`
     width: 100%;
     background-color: #FFF4D1;
     display: flex;
-    flex-direction: column;
 `

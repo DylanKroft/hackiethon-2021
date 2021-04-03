@@ -22,7 +22,7 @@ export default Taskbar
 const Container = styled.div`
     width: 90%;
     height: 100%;
-    max-height: 600px;
+    max-height: 650px;
     min-width: 300px;
     max-width: 500px;
     padding-left: 10px;     
