@@ -6,10 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import styled from 'styled-components'
 
 function App() {
-
   const {isAuthenticated} = useAuth0();
-
-
    if (isAuthenticated) {
      return(
       <Main>
@@ -42,5 +39,5 @@ const Footer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #FFF4D1;
+  background-color: #eaddb6;
 `

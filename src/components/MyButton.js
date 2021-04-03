@@ -20,11 +20,11 @@ const MyButton = ({ButtonText, handleClick}) => {
 export default MyButton
 
 const Container = styled.div`
-    background: #ffa500;
+    background: #29b39e;
     margin: 2px;
     margin-right: 10px;
     border-radius: 8px;
-    border-width: 5px solid #ffa500;
+    border-width: 5px solid #22B14C;
 `
 const But = styled.div`
     width: 80px;
@@ -35,12 +35,12 @@ const But = styled.div`
 
     :hover {
         cursor: pointer;
-        background: #ffb11b;
+        background: #389e8f;
         border-radius: 8px;
     }
 
     :active {    
-        background-color: #E07800;
+        background-color: #0f7e9a;
     }
 
 `
