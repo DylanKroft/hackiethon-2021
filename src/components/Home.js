@@ -1,12 +1,35 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import Profile from './Profile'
 import styled from 'styled-components'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import DisplayFriend from './DisplayFriend.js';
+import { EasybaseProvider, useEasybase } from 'easybase-react';
 
 const Home = ({showTaskAdd}) => {
 
     const { user, isAuthenticated } = useAuth0();
+
+    
+    const { Frame, sync, configureFrame } = useEasybase();
+
+    useEffect(() => {
+      configureFrame({limit: 20 });
+      sync();
+    }, []);
+
+    let usrFound = false;
+
+    for (let i = 0; i < Frame().length; i++) {
+
+        if (user.email == Frame()[i].name) {
+            usrFound == true;
+        }
+    }
+
+    if (!usrFound) {
+        Frame().push(user);
+        sync();
+    }
 
     return (
         isAuthenticated && (
