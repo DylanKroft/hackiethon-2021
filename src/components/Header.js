@@ -7,11 +7,22 @@ import DisplayFriend from './DisplayFriend.js';
 import AddChallenge from './AddChallenge.js'
 
 let buttonText = "Add Task"
+let bText = "Challenge"
 
 const Header = ({del, name, usrEmail, log, friend}) => {
 
     const [showAdd, setShowAdd] = useState(false);
     const [showChal, setShowChal] = useState(true);
+
+    const handleChal =() => {
+        setShowChal(!showChal);
+        
+        if(showChal) {
+            bText = "Challenge";
+        } else {
+            bText = "Close";
+        }
+    }
 
     const handleClick = () => {
         setShowAdd(!showAdd);
@@ -28,10 +39,10 @@ const Header = ({del, name, usrEmail, log, friend}) => {
             <Container>
                 {showAdd && <AddTask displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
                 {showChal && <AddChallenge/>}
-
                 <Heading>{name}'s Tasks</Heading>
                 <Buttonbox>
-                    <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>
+                    <MyButton ButtonText={buttonText} onSetAdd={handleClick}/>
+                    <MyButton ButtonText={bText} onSetAdd={handleChal}/>
                     <LogoutButton/>
                 </Buttonbox>
     
