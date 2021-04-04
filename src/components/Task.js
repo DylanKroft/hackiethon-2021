@@ -55,6 +55,10 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
             if (done){
                 name.description = newString;
                 name.score += 1;
+
+                if (name.score < 0){
+                    name.score = 0;
+                }
                 sync();
             }
             setDone(false);

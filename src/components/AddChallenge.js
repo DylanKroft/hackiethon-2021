@@ -21,6 +21,7 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
 
     var friendData = "";
     var ownerData = "";
+    var challenge = "";
 
     for (let i = 0; i < Frame().length; i++){
 
@@ -33,14 +34,32 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
         }
     }
 
-    const sendData = () => {
+    const sendData1 = () => {
 
         var button = document.querySelector("#Challenge_1");
-        var button2 = document.querySelector("#Challenge_2");
-        var button3 = document.querySelector("#Challenge_3");
-        var button4 = document.querySelector("#Challenge_4");
+        challenge = button.value;
 
-        let challenge = button.value;
+        if (friendData.description != "") {
+            friendData.description = challenge + "," + friendData.description;
+        } else {
+            friendData.description = challenge + ",";
+        }
+
+        if (ownerData.score >= 3){
+            ownerData.score -= 3;
+        }
+
+        if (ownerData.score < 0) {
+            ownerData.score = 0;
+        }
+
+        sync()
+    }
+
+    const sendData2 = () => {
+
+        var button = document.querySelector("#Challenge_2");
+        challenge = button.value;
 
         if (friendData.description != "") {
             friendData.description = challenge + "," + friendData.description;
@@ -54,6 +73,45 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
 
         sync()
     }
+
+    const sendData3 = () => {
+
+        var button = document.querySelector("#Challenge_3");
+        challenge = button.value;
+
+        if (friendData.description != "") {
+            friendData.description = challenge + "," + friendData.description;
+        } else {
+            friendData.description = challenge + ",";
+        }
+
+        if (ownerData.score > 3){
+            ownerData.score -= 3;
+        }
+
+        sync()
+    }
+
+    const sendData4 = () => {
+
+        var button = document.querySelector("#Challenge_4");
+        challenge = button.value;
+
+        if (friendData.description != "") {
+            friendData.description = challenge + "," + friendData.description;
+        } else {
+            friendData.description = challenge + ",";
+        }
+
+        if (ownerData.score > 3){
+            ownerData.score -= 3;
+        }
+
+        sync()
+    }
+    
+    
+    
     return (
             <Container>
                 <Head>
@@ -62,10 +120,10 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
                 <B>
             <IconContext.Provider value={{className: "icons"}}>
 
-                <button class="butt" id={"Challenge_1"}onClick={sendData} value={"CHALLENGE: Do 15 pushups"}><GiGymBag/></button>
-                <button class="butt" id={"Challenge_2"}onClick={sendData} value={"CHALLENGE: Drink 500mL of water"}><IoIosWater/></button>
-                <button class="butt" id={"Challenge_3"}onClick={sendData} value={"CHALLENGE: Talk a walk."}><BiWalk/></button>
-                <button class="butt" id={"Challenge_4"}onClick={sendData} value={"CHALLENGE: Meditate for 5 minutes"}><GiMeditation/></button>
+                <button class="butt" id={"Challenge_1"}onClick={sendData1} value={"Challenge: Do 15 pushups"}><GiGymBag/></button>
+                <button class="butt" id={"Challenge_2"}onClick={sendData2} value={"Challenge: Drink 500mL of water"}><IoIosWater/></button>
+                <button class="butt" id={"Challenge_3"}onClick={sendData3} value={"Challenge: Talk a walk."}><BiWalk/></button>
+                <button class="butt" id={"Challenge_4"}onClick={sendData4} value={"Challenge: Meditate for 5 minutes"}><GiMeditation/></button>
                 </IconContext.Provider>
                 </B>
             </Container>
