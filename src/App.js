@@ -67,12 +67,12 @@ const LoginBox = styled.div`
 const Container = styled.div`
     width: 300px;
     height: 400px;
-    background-color: rgba(210,180,108, 0.7);
+    background-color: rgba(210,180,108);
     position: relative;
     left: calc(50% - 150px);
     top: calc(50% - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
 `
