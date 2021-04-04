@@ -15,7 +15,6 @@ const Taskbar = ({name, email, loggedIn}) => {
     let tasks = [];
     let deleted_shit = [];
 
-
     //gets description for username
     if(loggedIn) {
         for (let  i = 0; i < Frame().length; i++) {

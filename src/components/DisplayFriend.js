@@ -37,8 +37,9 @@ const DisplayFriend = () => {
                 let friendEmail = Frame()[i].name;
                 console.log("line 36:", Frame()[i].name);
                 setAddedValue(true);
+                console.log("line 404004", Frame()[i])
                 setFriendTasks(friendEmail);
-                setFriendName(friendEmail)
+                setFriendName(Frame()[i].realname)
             }
         }
         setInputValue("");
@@ -75,7 +76,7 @@ const DisplayFriend = () => {
     else {
         return (
             <Display>
-                <Profile usrName={friendEmail} usrEmail={friendEmail} loggedIn={true}/>
+                <Profile usrName={friendName} usrEmail={friendEmail} loggedIn={true} isFriend={true}/>
             </Display>
         )
     }
