@@ -1,10 +1,24 @@
 import styled from 'styled-components'
-import React, { useState } from 'react'; 
 import './AddTask.css'
+import { EasybaseProvider, useEasybase } from 'easybase-react';
+import React, { useState, useEffect } from 'react';
 
-const AddTask = () => {
+const AddTask = ( {email, loggedIn}) => {
 
     const [inputValue, setInputValue] = React.useState("");
+    const { Frame, sync, configureFrame } = useEasybase();
+
+    useEffect(() => {
+        configureFrame({limit: 20 });
+        sync();
+      }, []);
+
+    for (let i = 0; i < Frame().length; i++){
+
+        if (Frame()[i].name == email){
+            var data = Frame()[i];
+        }
+    }
 
     const onChangeHandler = event => {
         setInputValue(event.target.value);
@@ -14,6 +28,8 @@ const AddTask = () => {
         e.preventDefault();
         console.log(inputValue);
         setInputValue("");
+        data.description = data.description + "," + inputValue;
+        sync();
     }
 
     return (

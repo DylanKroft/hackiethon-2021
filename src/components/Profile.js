@@ -9,7 +9,7 @@ const Profile = ({usrName, usrEmail, loggedIn}) => {
 
     return (
         <Container>
-            <Header name={usrName}/>
+            <Header log={loggedIn} name={usrName} usrEmail={usrEmail}/>
             <TaskSection>
                 <Taskbar email={usrEmail} loggedIn={loggedIn}/>
                 <GrowPanel email={usrEmail} loggedIn={loggedIn}/>
