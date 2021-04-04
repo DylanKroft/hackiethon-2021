@@ -37,6 +37,8 @@ const DisplayFriend = () => {
         console.log(inputValue);
         console.log(added)
 
+        let count = 0;
+
         for (let i = 0; i < Frame().length; i++){
 
             if (inputValue == Frame()[i].name){
@@ -47,7 +49,12 @@ const DisplayFriend = () => {
                 console.log("line 404004", Frame()[i])
                 setFriendTasks(friendEmail);
                 setFriendName(Frame()[i].realname)
-            }
+                count = 1;
+            } 
+        }
+
+        if (count != 1){
+            alert("Friend not found! Please try another email")
         }
         setInputValue("");
     } 
