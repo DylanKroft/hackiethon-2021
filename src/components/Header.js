@@ -12,25 +12,30 @@ let bText = "Challenge"
 const Header = ({del, name, usrEmail, log, friend}) => {
 
     const [showAdd, setShowAdd] = useState(false);
-    const [showChal, setShowChal] = useState(true);
+    const [showChal, setShowChal] = useState(false);
 
     const handleChal =() => {
-        setShowChal(!showChal);
+        if(showAdd == false) {
+            setShowChal(!showChal);
 
-        if(showChal) {
-            bText = "Challenge";
-        } else {
-            bText = "Close";
-        }
+            if(showChal) {
+                bText = "Challenge";
+            } else {
+                bText = "Close";
+            }
+        } 
     }
 
     const handleClick = () => {
-        setShowAdd(!showAdd);
+        if(showChal == false) {
 
-        if(showAdd) {
-            buttonText = "Add Task";
-        } else {
-            buttonText = "Close";
+            setShowAdd(!showAdd);
+
+            if(showAdd) {
+                buttonText = "Add Task";
+            } else {
+                buttonText = "Close";
+            }
         }
     }
     
@@ -80,11 +85,12 @@ const Heading = styled.div`
     font-size: 1.5em;
     font-weight: 800;
     width: 50%;
-    min-width: 250px;
+    min-width: 220px;
     height: 100%;
-    line-height: 5em;
+    line-height: 4.2em;
     color: #29b39e;
     text-align: left;
+    overflow-x: hidden;
 `
 
 const Buttonbox = styled.div`

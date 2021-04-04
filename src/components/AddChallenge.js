@@ -20,9 +20,12 @@ const AddChallenge = ({ friendEmail }) => {
         } 
     }
 
-    let challenge = "";
-
     const sendData = () => {
+
+        var button = document.querySelector("#Challenge_1");
+        
+        let challenge = button.value;
+        console.log(challenge);
 
         if (friendData.description != "") {
             friendData.description = friendData.description + challenge + ",";
@@ -31,15 +34,12 @@ const AddChallenge = ({ friendEmail }) => {
         }
         sync()
     }
-
-
     return (
             <Container>
-                <But1 onClick={sendData} value={"Pushup"}></But1>
-                <But1 onClick={sendData} value={"Pushdown"}></But1>
-                <But1 onClick={sendData} value={"Pushright"}></But1>
-                <But1 onClick={sendData} value={"Pushleft"}></But1>
-
+                <button id="Challenge_1" onClick={sendData} value={"Pushup"}></button>
+                <button onClick={sendData} value={"PushDown"}></button>
+                <button onClick={sendData} value={"PushSide"}></button>
+                <button onClick={sendData} value={"Push"}></button>
             </Container>
     )
 }
@@ -61,6 +61,7 @@ const Container = styled.div`
     -webkit-box-shadow: 0px 0px 27px -15px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 27px -15px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 27px -15px rgba(0,0,0,0.75);
+    display: flex;
 
     @media screen and (max-width: 1000px) {
      {

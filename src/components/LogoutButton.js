@@ -27,17 +27,17 @@ const Container = styled.div`
     margin-right: 18px;
     border-radius: 8px;
     border-width: 5px solid #ffa500;
-    width: 100px;
 `
 const But = styled.div`
 transition: background-color 0.3s ease;
     -webkit-transition: background-color 0.3s ease;
-    width: 80px;
+    width: 60px;
     font-weight: 600;
     text-align: center;
     padding: 10px;
     color: white;
     border-radius: 8px;
+    font-size: 0.8em;
 
 
     :hover {

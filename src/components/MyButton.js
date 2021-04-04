@@ -28,9 +28,11 @@ const Container = styled.div`
     position: relative;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
+    font-size: 0.8em;
+    height: 35px;
 `
 const But = styled.div`
-    width: 80px;
+    width: 60px;
     font-weight: 600;
     text-align: center;
     padding: 10px;
