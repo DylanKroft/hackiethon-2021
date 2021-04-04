@@ -38,13 +38,13 @@ const Container = styled.div`
 `
 
 const Heading = styled.div`
-    padding-left: 20px;
+    padding-left: 25px;
     font-size: 1.5em;
     font-weight: 800;
     width: 50%;
     min-width: 250px;
     height: 100%;
-    line-height: 4em;
+    line-height: 5em;
     color: #29b39e;
     text-align: left;
 `

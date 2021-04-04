@@ -24,10 +24,8 @@ const Container = styled.div`
     width: 50%;
     height: 100%;
     min-width: 400px;
-    min-height: 600px;
     margin: 0;
     padding: 0;
-    background-color: #eaddb6;
     justify-content: center;
     align-items: center;
 
@@ -38,10 +36,10 @@ const Container = styled.div`
 }
 `
 const TaskSection = styled.div`
-    width: 100%;
-    background-color: #eaddb6;
     display: flex;
     border: 2px solid white;
     border-radius: 15px;
     height: 75%;
+    margin: 15px;
+
 `

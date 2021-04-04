@@ -45,18 +45,14 @@ export default Taskbar
 
 const Container = styled.div`
     width: 90%;
-    height: 100%;
-    max-height: 650px;
     min-width: 300px;
     max-width: 500px;
-    min-height: 600px;
-    padding-left: 10px;     
     margin: 0;
     overflow-y: scroll;
     overflow-x: hidden;
     justify-content: flex-end;
     flex-direction: column;
-    background-color: #eaddb6;
+    padding: 10px;
 `
 
 
