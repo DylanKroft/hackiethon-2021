@@ -27,7 +27,7 @@ const Home = ({showTaskAdd}) => {
     }
 
     if (!usrFound) {
-        Frame().push({name: {user.email}});
+        Frame().push({name: user.email });
         sync();
     }
 
