@@ -52,6 +52,7 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
             }
         }
             name.description = newString;
+            name.score += 1;
             sync();
         }
 

@@ -31,11 +31,15 @@ const Container = styled.div`
     margin-left: 20px;
 `
 const But = styled.div`
+transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
     width: 80px;
     font-weight: 600;
     text-align: center;
     padding: 10px;
     color: white;
+    border-radius: 8px;
+
 
     :hover {
         cursor: pointer;

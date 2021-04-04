@@ -1,6 +1,5 @@
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
-import "./MyButton.css"
 import styled from 'styled-components'
 
 
@@ -27,6 +26,8 @@ const Container = styled.div`
     border-width: 5px solid #22B14C;
     z-index: 1000;
     position: relative;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 `
 const But = styled.div`
     width: 80px;
@@ -36,6 +37,9 @@ const But = styled.div`
     color: white;
     z-index: 1000;
     position: relative;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    border-radius: 8px;
 
     :hover {
         cursor: pointer;
@@ -45,6 +49,7 @@ const But = styled.div`
 
     :active {    
         background-color: #0f7e9a;
+        border-radius: 8px;
     }
 
 `

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import './AddTask.css'
+import './AddFriend1.css'
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
 
@@ -58,9 +58,10 @@ export default AddTask
 
 const FormBox = styled.div`
     width: 100%;
-    display: inline-block;
-    position: relative;
-    left: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 40px;
 
 
     @media screen and (max-width: 1000px) {
