@@ -35,6 +35,8 @@ const DisplayFriend = () => {
 
         e.preventDefault();
 
+        let count = 0;
+
         for (let i = 0; i < Frame().length; i++){
 
             if (inputValue == Frame()[i].name){
@@ -42,7 +44,12 @@ const DisplayFriend = () => {
                 setAddedValue(true);
                 setFriendTasks(friendEmail);
                 setFriendName(Frame()[i].realname)
-            }
+                count = 1;
+            } 
+        }
+
+        if (count != 1){
+            alert("Friend not found! Please try another email")
         }
         setInputValue("");
     } 
