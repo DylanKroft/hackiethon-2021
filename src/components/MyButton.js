@@ -4,12 +4,12 @@ import "./MyButton.css"
 import styled from 'styled-components'
 
 
-const MyButton = ({ButtonText, handleClick}) => {
+const MyButton = ({ButtonText, onSetAdd}) => {
 
     return (
     <>  
         <Container>
-            <But onClick =  {handleClick}>
+            <But onClick={onSetAdd}>
                 {ButtonText}
             </But>
         </Container>
@@ -25,6 +25,8 @@ const Container = styled.div`
     margin-right: 10px;
     border-radius: 8px;
     border-width: 5px solid #22B14C;
+    z-index: 1000;
+    position: relative;
 `
 const But = styled.div`
     width: 80px;
@@ -32,6 +34,8 @@ const But = styled.div`
     text-align: center;
     padding: 10px;
     color: white;
+    z-index: 1000;
+    position: relative;
 
     :hover {
         cursor: pointer;

@@ -3,16 +3,17 @@ import Taskbar from './Taskbar.js';
 import Header from './Header.js';
 import GrowPanel from './GrowPanel.js';
 import AddTask from './AddTask.js';
+import React, { useState, useEffect } from 'react';
 
-const Profile = ({usrName, usrEmail, loggedIn, displayAddTask, showTaskAdd}) => {
+const Profile = ({usrName, usrEmail, loggedIn}) => {
+
     return (
         <Container>
-            <Header name={usrName} showTaskAdd={showTaskAdd}/>
+            <Header name={usrName}/>
             <TaskSection>
                 <Taskbar email={usrEmail} loggedIn={loggedIn}/>
                 <GrowPanel />
             </TaskSection>
-           {displayAddTask && <AddTask email={usrEmail}/>}
         </Container>
     )
 }
@@ -41,6 +42,5 @@ const TaskSection = styled.div`
     display: flex;
     border: 2px solid white;
     border-radius: 15px;
-    overflow-y: scroll;
     height: 75%;
 `

@@ -1,0 +1,36 @@
+input[type="text"] {
+  width: 60%;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+  height: 60px;
+  margin-left: 25px;
+  font-size: 1.25em;
+  font-weight: 600;
+  box-sizing: border-box;
+  border: none;
+}
+
+.primary__btn {
+  background-color: #29b39e;
+  border-radius: 8px;
+  height: 40px;
+  width: 80px;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  border: none;
+}
+
+.primary__btn:hover {
+  cursor: pointer;
+  background: #389e8f;
+  border-radius: 8px;
+}
+
+.primary__btn:active {
+  background-color: #0f7e9a;
+}
+
+.primary__btn:focus {
+  outline: none;
+}
