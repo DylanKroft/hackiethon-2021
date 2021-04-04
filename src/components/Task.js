@@ -3,8 +3,7 @@ import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import Taskbar from './Taskbar';
-import ReactTooltip from 'react-tooltip';
-import icon from '../bamboo/icon.png'
+import Tooltip from "@material-ui/core/Tooltip";
 
 const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
     
@@ -74,16 +73,23 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
             return (
                 <Container d={done}>
                     <CompleteButton d={done}>
-                        <Circle onClick={completeTask} d={done}/>
+                    <Tooltip
+                title="Click her to mark the task as complete."
+                placement="top"
+            >
+            <Circle onClick={completeTask} d={done}/>
+            </Tooltip>
                     </CompleteButton>
                     <Text d={done}>{taskText}</Text>
-                    <Icon>
-                    <img src = {icon} alt = "grow"></img> 
                     <But d={done}>
-                        <Circle onClick={grow}>        
-                        </Circle>
+                    <Tooltip
+                title="Click here to mark a submit a task and grow bamboo."
+                placement="top"
+            >
+                        <Circle onClick={grow}/>  
+            </Tooltip>
                     </But>  
-                    </Icon>    
+                    
                 </Container> 
             )
         }
@@ -145,6 +151,9 @@ const Circle = styled.div`
     z-index: 10;
     left: 15px;
     top: 20px;
+    object-fit: cover;
+    overflow: hidden;
+
     
     :hover {
         cursor: pointer;
@@ -161,10 +170,4 @@ const CompleteButton = styled.div`
     width: 60px;
     background-color: #29B39E;
     margin-right: 10px;
-`
-
-const Icon = styled.div`
-    display: flex;
-    justify-content: flex-end
-
 `
