@@ -10,6 +10,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import bg from'./bamboo/Login.png';
 
 function App() {
+
+  let a = "<Bamboo>"
   
   const {isAuthenticated} = useAuth0();
    if (isAuthenticated) {
@@ -26,7 +28,10 @@ function App() {
    else{
      return(
      <LoginBox>
-      <LoginButton />
+        <Container>
+        <h1 class = "logo"> {a} </h1>
+          <LoginButton />
+        </Container>
      </LoginBox>
      )
    }
@@ -41,8 +46,8 @@ const Main = styled.div`
 const Footer = styled.div`
   position: fixed;
   bottom: 0;
-  height: 80px;
-  width: 100%;
+  height: 100px;
+  width: 80px;
   display: flex;
   align-items: center;
 `
@@ -57,4 +62,17 @@ const LoginBox = styled.div`
      {
     }
 
+`
+
+const Container = styled.div`
+    width: 300px;
+    height: 400px;
+    background-color: rgba(164,112,37,0.5);
+    position: relative;
+    left: calc(50% - 150px);
+    top: calc(50% - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 `

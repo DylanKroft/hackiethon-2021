@@ -10,3 +10,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  font-family: logo, Fantasy;
+  font-size: 100px;
+  font-weight: bold;
+}
