@@ -1,10 +1,21 @@
-import React from 'react'
 import styled from 'styled-components'
-
+import BambooPiece from "./BambooPiece.js"
 
 const GrowPanel = () => {
     return (
         <Container>
+            <Box>           
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+            <BambooPiece />
+
+            </Box>
         </Container>
     )
 }
@@ -12,11 +23,16 @@ const GrowPanel = () => {
 export default GrowPanel
 
 const Container = styled.div`
-
-    height: 100%;
+    flex: 1;
+    height: 99.5%;
     width: 50%;
-    height: 100vh;
     max-height: 650px;
-    max-width: 300px;
-    margin-right: 10px;
+    display: flex;
+    flex-direction: column-reverse;    overflow-y: scroll;
+`
+
+const Box = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: min-content;
 `

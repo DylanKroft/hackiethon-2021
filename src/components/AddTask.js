@@ -59,14 +59,10 @@ const Container = styled.div`
     position: fixed;
     z-index: 1000;
     top: 0;
-<<<<<<< HEAD
-    border-radius: 15px;
-=======
     border-radius: 0 0 10px 10px;
     -webkit-box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
     -moz-box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
     box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
->>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
 
     @media screen and (max-width: 800px) {
      {
