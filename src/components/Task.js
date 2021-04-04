@@ -3,8 +3,7 @@ import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import Taskbar from './Taskbar';
-import ReactTooltip from 'react-tooltip';
-import icon from '../bamboo/icon.png'
+import Tooltip from "@material-ui/core/Tooltip";
 
 const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
     
@@ -19,10 +18,6 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
 
     const completeTask = () => {
 
-
-        console.log("Before", task)
-        console.log("Before: ", deleted_shit)
-
         if (!done){
             deleted_shit.splice(id, 1, task[id]);
             setDone(true)
@@ -30,16 +25,12 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
             deleted_shit.splice(id, 1, "");
             setDone(false)
         }     
-        console.log("after", task)     
-        console.log("after:" , deleted_shit) 
+
     }
 
     const grow = () => {
 
         let modified = []
-
-        console.log("to be modified: ", task);
-        console.log("modified id ", id)
 
         for (let i = 0; i < task.length; i ++){
 
@@ -64,6 +55,10 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
             if (done){
                 name.description = newString;
                 name.score += 1;
+
+                if (name.score < 0){
+                    name.score = 0;
+                }
                 sync();
             }
             setDone(false);
@@ -74,16 +69,23 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
             return (
                 <Container d={done}>
                     <CompleteButton d={done}>
-                        <Circle onClick={completeTask} d={done}/>
+                    <Tooltip
+                title="Click her to mark the task as complete."
+                placement="top"
+            >
+            <Circle onClick={completeTask} d={done}/>
+            </Tooltip>
                     </CompleteButton>
                     <Text d={done}>{taskText}</Text>
-                    <Icon>
-                    <img src = {icon} alt = "grow"></img> 
                     <But d={done}>
-                        <Circle onClick={grow}>        
-                        </Circle>
+                    <Tooltip
+                title="Click here to mark a submit a task and grow bamboo."
+                placement="top"
+            >
+                        <Circle onClick={grow}/>  
+            </Tooltip>
                     </But>  
-                    </Icon>    
+                    
                 </Container> 
             )
         }
@@ -145,6 +147,9 @@ const Circle = styled.div`
     z-index: 10;
     left: 15px;
     top: 20px;
+    object-fit: cover;
+    overflow: hidden;
+
     
     :hover {
         cursor: pointer;
@@ -161,10 +166,4 @@ const CompleteButton = styled.div`
     width: 60px;
     background-color: #29B39E;
     margin-right: 10px;
-`
-
-const Icon = styled.div`
-    display: flex;
-    justify-content: flex-end
-
 `
