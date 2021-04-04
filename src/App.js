@@ -11,7 +11,7 @@ import bg from'./bamboo/Login.png';
 
 function App() {
 
-  let a = "<Bamboo>"
+  let a = "Bamboo"
   
   const {isAuthenticated} = useAuth0();
    if (isAuthenticated) {
@@ -65,16 +65,22 @@ const LoginBox = styled.div`
 `
 
 const Container = styled.div`
+-webkit-box-shadow: 0px 0px 11px -4px rgba(71,71,71,1);
+-moz-box-shadow: 0px 0px 11px -4px rgba(71,71,71,1);
+box-shadow: 0px 0px 11px -4px rgba(71,71,71,1);
     width: 300px;
     height: 400px;
-    border: 2px solid white;
-    background-color: rgba(210,180,108, 0.7);
     position: relative;
     left: calc(50% - 150px);
     top: calc(50% - 200px);
-    display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 15px;
+    justify-content: space-between;
+    border-radius: 10px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    background: rgb(240,216,144);
+background: linear-gradient(355deg, rgba(240,216,144,1) 42%, rgba(186,147,23,1) 83%);
+
+
 `

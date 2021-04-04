@@ -1,6 +1,6 @@
 @font-face {
   font-family: logo;
-  src: url('./bamboo/leaves_and_ground.ttf');
+  src: url("./bamboo/leaves_and_ground.ttf");
 }
 .button {
   width: 100px;
@@ -15,10 +15,11 @@
   justify-content: center;
 }
 
-.logo{
+.logo {
   display: flex;
+  padding-top: 40px;
   flex-direction: column;
-  font-family: logo, Fantasy;
-  font-size: 100px;
+  font-family: Fantasy;
+  font-size: 3em;
   font-weight: bold;
 }
