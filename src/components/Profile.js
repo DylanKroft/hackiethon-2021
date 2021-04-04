@@ -5,11 +5,11 @@ import GrowPanel from './GrowPanel.js';
 import AddTask from './AddTask.js';
 import React, { useState, useEffect } from 'react';
 
-const Profile = ({usrName, usrEmail, loggedIn}) => {
+const Profile = ({usrName, usrEmail, loggedIn, isFriend}) => {
 
     return (
         <Container>
-            <Header log={loggedIn} name={usrName} usrEmail={usrEmail}/>
+            <Header log={loggedIn} name={usrName} usrEmail={usrEmail} friend={isFriend}/>
             <TaskSection>
                 <Taskbar name={usrName} email={usrEmail} loggedIn={loggedIn}/>
                 <GrowPanel email={usrEmail} loggedIn={loggedIn}/>

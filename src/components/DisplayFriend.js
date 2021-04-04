@@ -37,6 +37,7 @@ const DisplayFriend = () => {
                 let friendEmail = Frame()[i].name;
                 console.log("line 36:", Frame()[i].realname);
                 setAddedValue(true);
+                console.log("line 404004", Frame()[i])
                 setFriendTasks(friendEmail);
                 setFriendName(Frame()[i].realname)
             }
