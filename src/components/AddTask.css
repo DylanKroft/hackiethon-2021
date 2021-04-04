@@ -10,6 +10,10 @@ input[type="text"] {
   border-radius: 10px 10px 10px 10px;
 }
 
+.panda {
+  height: 10em;
+}
+
 .primary__btn {
   background-color: #29b39e;
   border-radius: 8px;

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: logo;
+  src: url('./bamboo/leaves_and_ground.ttf');
+}
 .button {
   width: 100px;
   height: 40px;

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'; 
 import './AddTask.css'
+import panda from'../bamboo/panda.gif';
 
 const AddTask = () => {
 
@@ -19,6 +20,9 @@ const AddTask = () => {
     return (
         <Container>
             <Heading>Add Friend</Heading>
+            <Panda>
+                <img className="panda" src={panda} alt="loading..." />
+            </Panda>
             <FormBox>
                 <form onSubmit={addTask}>
                     <input
@@ -40,25 +44,32 @@ const AddTask = () => {
 
 export default AddTask
 
+const Panda = styled.div`
+`
+
 const FormBox = styled.div`
     width: 100%;
-    display: inline-block;
-    position: relative;
+    padding-left: calc(40px + 3%);
 
 
     @media screen and (max-width: 800px) {
      {
          width: 100%;
+         padding-left: 30px;
+
     }
 `
 
 const Container = styled.div`
     width: 45%;
-    height: 200px;
+    height: 500px;
     background-color: #f0d890;
     border: 2px solid white;
     position: relative;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: 35%;
     left: 2%;
     border-radius: 10px 10px 10px 10px;
@@ -77,8 +88,5 @@ const Heading = styled.div`
     padding-left: 30px;
     font-size: 2em;
     font-weight: 800;
-    width: 50%;
-    min-width: 250px;
-    line-height: 3em;
     color: white;
 `

@@ -13,7 +13,7 @@ const Taskbar = ({email, loggedIn}) => {
     }, []);
 
     let tasks = [];
-    let deleted_shit = []
+    let deleted_shit = [];
 
     //gets description for username
     if(loggedIn) {
@@ -27,15 +27,15 @@ const Taskbar = ({email, loggedIn}) => {
         for (let i = 0; i < tasks.length; i ++){
             deleted_shit[i] = "";
         }
-    
     }
 
+    console.log(tasks);
     if (loggedIn) {
         return (
             <Container>
             {tasks.map((ele,i) => (
-                    <Task name={name} em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} />
-                ))}
+                <Task name={name} em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} />
+            ))}
 
             </Container>
         )
@@ -47,11 +47,9 @@ export default Taskbar
 const Container = styled.div`
     width: 100%;
     padding: 10px;
-    max-height: 600px;
-    min-width: 300px;
-    max-width: 500px;
+    flex: 4;
     margin: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     justify-content: flex-end;
     flex-direction: column;    

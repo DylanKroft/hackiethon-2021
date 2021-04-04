@@ -67,7 +67,7 @@ const LoginBox = styled.div`
 const Container = styled.div`
     width: 300px;
     height: 400px;
-    background-color: rgba(164,112,37,0.5);
+    background-color: rgba(210,180,108, 0.7);
     position: relative;
     left: calc(50% - 150px);
     top: calc(50% - 200px);

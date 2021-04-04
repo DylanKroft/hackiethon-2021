@@ -16,7 +16,6 @@ const AddTask = ( {email, loggedIn}) => {
     for (let i = 0; i < Frame().length; i++){
 
         if (Frame()[i].name == email){
-            console.log("line 33", Frame()[i].name)
             var data = Frame()[i];
         }
     }
@@ -29,7 +28,7 @@ const AddTask = ( {email, loggedIn}) => {
         e.preventDefault();
         console.log(inputValue);
         setInputValue("");
-        data.description = data.description + inputValue;
+        data.description = data.description + "," + inputValue;
         sync();
     }
 
