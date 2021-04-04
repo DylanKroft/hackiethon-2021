@@ -1,13 +1,17 @@
+import React, { useState, useEffect } from 'react';
+import { EasybaseProvider, useEasybase } from 'easybase-react';
 import styled from 'styled-components'
 import './AddTask.css'
 import panda from'../bamboo/panda.gif';
-import React, { useState, useEffect } from 'react';
-import { EasybaseProvider, useEasybase } from 'easybase-react';
+import Task from './Task';
+import Profile from './Profile';
 
+const DisplayFriend = () => {
 
-const AddFriend = ( ) => {
-
+    const [added, setAddedValue] = useState(false);
     const [inputValue, setInputValue] = React.useState("");
+    const [friendEmail, setFriendTasks] = useState([]);
+    const [friendName, setFriendName] = useState("");
     const { Frame, sync, configureFrame } = useEasybase();
 
     useEffect(() => {
@@ -19,31 +23,38 @@ const AddFriend = ( ) => {
         setInputValue(event.target.value);
       };
 
-    const addTask = (e) => {
+
+    const addFriend = (e) => {
+
         e.preventDefault();
         console.log(inputValue);
+        console.log(added)
 
         for (let i = 0; i < Frame().length; i++){
 
-            console.log("line 28: ", Frame()[i].name)
-            console.log("line 27:", inputValue)
             if (inputValue == Frame()[i].name){
                 console.log("here 31:", Frame()[i])
-                var data = Frame()[i];
+                let friendEmail = Frame()[i].name;
+                console.log("line 36:", Frame()[i].name);
+                setAddedValue(true);
+                setFriendTasks(friendEmail);
+                setFriendName(friendEmail)
             }
         }
-
         setInputValue("");
-    }
+    } 
 
-    return (
-        <Container>
+    console.log(added)
+
+    if (!added){
+        return (
+            <Container a={added}>
             <Heading>Add Friend</Heading>
             <Panda>
                 <img className="panda" src={panda} alt="loading..." />
             </Panda>
             <FormBox>
-                <form onSubmit={addTask}>
+                <form onSubmit={addFriend}>
                     <input
                     type="text"
                     name="name"
@@ -56,12 +67,22 @@ const AddFriend = ( ) => {
                     </button>
                 </form>
             </FormBox>
-
         </Container>
-    )
+    
+        )
+
+    } 
+    else {
+        return (
+            <Display>
+                <Profile usrName={friendEmail} usrEmail={friendEmail} loggedIn={true}/>
+            </Display>
+        )
+    }
 }
 
-export default AddFriend;
+export default DisplayFriend
+
 
 const Panda = styled.div`
     flex: 0.8;
@@ -83,7 +104,7 @@ const FormBox = styled.div`
     }
 `
 
-const Container = styled.div`
+var Container = styled.div`
     width: 45%;
     height: 500px;
     background-color: #f0d890;
@@ -106,6 +127,9 @@ const Container = styled.div`
         right: 5%;
         top: 0%;
     }
+    }
+    
+    ${({a}) => a && 'display: none;'}
 `
 
 const Heading = styled.div`
@@ -117,3 +141,16 @@ const Heading = styled.div`
     display: flex;
     align-items: center;
 `
+
+
+const Display = styled.div`
+    width: 100%;
+    padding: 10px;
+    flex: 4;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    justify-content: flex-end;
+    flex-direction: column;  
+`
+

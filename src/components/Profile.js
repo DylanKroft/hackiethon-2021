@@ -11,7 +11,7 @@ const Profile = ({usrName, usrEmail, loggedIn}) => {
         <Container>
             <Header log={loggedIn} name={usrName} usrEmail={usrEmail}/>
             <TaskSection>
-                <Taskbar email={usrEmail} loggedIn={loggedIn}/>
+                <Taskbar name={usrName} email={usrEmail} loggedIn={loggedIn}/>
                 <GrowPanel email={usrEmail} loggedIn={loggedIn}/>
             </TaskSection>
         </Container>

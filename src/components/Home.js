@@ -2,7 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Profile from './Profile'
 import styled from 'styled-components'
 import React, { useState, useEffect } from 'react';
-import AddFriend from './AddFriend.js';
+import DisplayFriend from './DisplayFriend.js';
 
 const Home = ({showTaskAdd}) => {
 
@@ -13,7 +13,7 @@ const Home = ({showTaskAdd}) => {
             <div>
                 <Main>         
                     <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated} displayAddTask={showTaskAdd}/> 
-                    <AddFriend></AddFriend>
+                    <DisplayFriend />
                 </Main>
             </div>
         )
