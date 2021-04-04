@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import Taskbar from './Taskbar';
 import ReactTooltip from 'react-tooltip';
+import icon from '../bamboo/icon.png'
 
 const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
     
@@ -77,7 +78,8 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
                     </CompleteButton>
                     <Text d={done}>{taskText}</Text>
                     <But d={done}>
-                        <Circle onClick={grow}></Circle>
+                        <Circle onClick={grow}>
+                        </Circle>
                         </But>
                 </Container> 
             )
