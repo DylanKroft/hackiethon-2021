@@ -23,7 +23,14 @@ const DisplayFriend = () => {
         setInputValue(event.target.value);
       };
 
-
+    
+    const DeleteFriend = () => {
+        setInputValue("");
+        setFriendTasks([]);
+        setAddedValue(false);
+        setFriendName("");
+    }
+    
     const addFriend = (e) => {
 
         e.preventDefault();
@@ -76,11 +83,12 @@ const DisplayFriend = () => {
     else {
         return (
             <>
-                <Profile usrName={friendName} usrEmail={friendEmail} loggedIn={true} isFriend={true}/>
+                <Profile d={DeleteFriend} usrName={friendName} usrEmail={friendEmail} loggedIn={true} isFriend={true}/>
             </>
         )
     }
 }
+
 
 export default DisplayFriend
 

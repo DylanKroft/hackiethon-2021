@@ -5,7 +5,7 @@ import { EasybaseProvider, useEasybase } from 'easybase-react';
 import Taskbar from './Taskbar';
 import ReactTooltip from 'react-tooltip';
 
-const Task = ({taskText, id, em, task, deleted_shit, name}) => {
+const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
     
     const { Frame, sync, configureFrame } = useEasybase();
 
@@ -56,17 +56,33 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
         }
 
 
-        return (
-            <Container d={done}>
-                <CompleteButton d={done}>
-                    <Circle onClick={completeTask} d={done}/>
-                </CompleteButton>
-                <Text d={done}>{taskText}</Text>
-                <But d={done}>
-                    <Circle onClick={grow}></Circle>
+        if (!isFriend){
+            return (
+                <Container d={done}>
+                    <CompleteButton d={done}>
+                        <Circle onClick={completeTask} d={done}/>
+                    </CompleteButton>
+                    <Text d={done}>{taskText}</Text>
+                    <But d={done}>
+                        <Circle onClick={grow}></Circle>
+                        </But>
+                </Container> 
+            )
+        }
+
+        else {
+            return (
+                <Container d={done}>
+                    <CompleteButton d={done}>
+                    </CompleteButton>
+                    <Text d={done}>{taskText}</Text>
+                    <But d={done}>
                     </But>
-            </Container> 
-        )
+                </Container> 
+            )
+
+        }
+
 }
 
 export default Task

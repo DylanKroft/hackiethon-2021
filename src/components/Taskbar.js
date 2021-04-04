@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Task from './Task.js';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 
-const Taskbar = ({name, email, loggedIn}) => {
+const Taskbar = ({name, email, loggedIn, friend}) => {
 
     const { Frame, sync, configureFrame } = useEasybase();
 
@@ -41,7 +41,7 @@ const Taskbar = ({name, email, loggedIn}) => {
         return (
             <Container>
             {tasks.map((ele,i) => (
-                <Task name={name} em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} />
+                <Task name={name} em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} isFriend={friend} />
             ))}
 
             </Container>
