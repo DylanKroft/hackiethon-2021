@@ -12,7 +12,7 @@ const Profile = ({usrName, usrEmail, loggedIn}) => {
             <Header name={usrName}/>
             <TaskSection>
                 <Taskbar email={usrEmail} loggedIn={loggedIn}/>
-                <GrowPanel />
+                <GrowPanel email={usrEmail} loggedIn={loggedIn}/>
             </TaskSection>
         </Container>
     )

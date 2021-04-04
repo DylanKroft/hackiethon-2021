@@ -1,13 +1,13 @@
 input[type="text"] {
   width: 60%;
-  padding: 10px 10px 10px 10px;
-  margin: 10px 10px 10px 10px;
   height: 60px;
-  margin-left: 25px;
   font-size: 1.25em;
+  margin-left: 5%;
+  margin-right: 5%;
   font-weight: 600;
   box-sizing: border-box;
   border: none;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .primary__btn {

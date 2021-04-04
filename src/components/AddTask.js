@@ -41,10 +41,10 @@ const AddTask = () => {
 export default AddTask
 
 const FormBox = styled.div`
-    position: fixed;
-    width: 50%;
-    top: 75px;
+    width: 100%;
     display: inline-block;
+    position: relative;
+
 
     @media screen and (max-width: 800px) {
      {
@@ -53,20 +53,24 @@ const FormBox = styled.div`
 `
 
 const Container = styled.div`
-    width: 50%;
-    height: 175px;
+    width: 45%;
+    height: 150px;
     background-color: #D6C48F;
     position: fixed;
     z-index: 1000;
-    top: 0;
-    border-radius: 0 0 10px 10px;
-    -webkit-box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
-    -moz-box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
-    box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
+    top: 30%;
+    left: 2.5%;
+    right: 2.5%;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 0px 0px 27px 4px rgba(102,102,102,1);
+    -moz-box-shadow: 0px 0px 27px 4px rgba(102,102,102,1);
+    box-shadow: 0px 0px 27px 4px rgba(102,102,102,1);
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
      {
-         width: 100%;
+         width: 95%;
+         left: 2.5%;
+        right: 2.5%;
     }
 `
 
@@ -76,7 +80,6 @@ const Heading = styled.div`
     font-weight: 800;
     width: 50%;
     min-width: 250px;
-    height: 100%;
-    line-height: 3em;
+    line-height: 2em;
     color: white;
 `

@@ -3,21 +3,29 @@ import MyButton from './MyButton.js';
 import React, { useState, useEffect } from 'react';
 import AddTask from './AddTask';
 
+let buttonText = "Add Task"
+
 const Header = ({name, usrEmail}) => {
 
     const [showAdd, setShowAdd] = useState(false);
 
     const handleClick = () => {
         setShowAdd(!showAdd);
-        console.log("hi")
+
+        if(showAdd) {
+            buttonText = "Add Task";
+        } else {
+            buttonText = "Close";
+        }
     }
+
     
     return (
         <Container>
             {showAdd && <AddTask email={usrEmail}/>}
             <Heading>{name}'s Tasks</Heading>
             <Buttonbox>
-                <MyButton ButtonText= 'Add Task' onSetAdd = {handleClick}/>
+                <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>
             </Buttonbox>
 
         </Container>
