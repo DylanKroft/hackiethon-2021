@@ -1,3 +1,4 @@
+
 import styled from 'styled-components'
 import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
@@ -5,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 const Task = ({taskText, id}) => {
 
     const [done, setDone] = useState(false);
-
 
     const completeTask = () => {
         setDone(true)
