@@ -12,7 +12,7 @@ const GrowPanel = () => {
 export default GrowPanel
 
 const Container = styled.div`
-    background-image: url(${bg});
+    //background-image: url(${bg});
     height: 100%;
     width: 50%;
     height: 100vh;

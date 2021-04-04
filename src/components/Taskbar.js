@@ -8,7 +8,7 @@ const Taskbar = ({email, loggedIn}) => {
     const { Frame, sync, configureFrame } = useEasybase();
 
     useEffect(() => {
-      configureFrame({tableName: "USERS", limit: 20 });
+      configureFrame({limit: 20 });
       sync();
     }, []);
 
@@ -27,8 +27,8 @@ const Taskbar = ({email, loggedIn}) => {
     if (loggedIn) {
         return (
             <Container>
-            {tasks.map((ele) => (
-                    <Task taskText={ele} />
+            {tasks.map((ele,i) => (
+                    <Task taskText={ele} id={i} />
                 ))}
 
             </Container>
@@ -48,8 +48,8 @@ const Container = styled.div`
     margin: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    justify-content: center;
-    align-self: center;
+    justify-content: flex-end;
+    flex-direction: column;
     background-color: #eaddb6;
 `
 

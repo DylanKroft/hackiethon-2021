@@ -29,11 +29,11 @@ const Container = styled.div`
     background-color: #eaddb6; 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 `
 
 const Heading = styled.div`
-    padding-left: 30px;
+    padding-left: 20px;
     font-size: 1.5em;
     font-weight: 800;
     width: 50%;
@@ -41,6 +41,7 @@ const Heading = styled.div`
     height: 100%;
     line-height: 4em;
     color: #29b39e;
+    text-align: left;
 `
 
 const Buttonbox = styled.div`
