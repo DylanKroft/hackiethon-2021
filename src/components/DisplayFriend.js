@@ -35,10 +35,10 @@ const DisplayFriend = () => {
             if (inputValue == Frame()[i].name){
                 console.log("here 31:", Frame()[i])
                 let friendEmail = Frame()[i].name;
-                console.log("line 36:", Frame()[i].name);
+                console.log("line 36:", Frame()[i].realname);
                 setAddedValue(true);
                 setFriendTasks(friendEmail);
-                setFriendName(friendEmail)
+                setFriendName(Frame()[i].realname)
             }
         }
         setInputValue("");
@@ -74,9 +74,9 @@ const DisplayFriend = () => {
     } 
     else {
         return (
-            <Display>
-                <Profile usrName={friendEmail} usrEmail={friendEmail} loggedIn={true}/>
-            </Display>
+            <>
+                <Profile usrName={friendName} usrEmail={friendEmail} loggedIn={true}/>
+            </>
         )
     }
 }
@@ -141,16 +141,3 @@ const Heading = styled.div`
     display: flex;
     align-items: center;
 `
-
-
-const Display = styled.div`
-    width: 100%;
-    padding: 10px;
-    flex: 4;
-    margin: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    justify-content: flex-end;
-    flex-direction: column;  
-`
-

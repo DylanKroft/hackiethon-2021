@@ -60,6 +60,7 @@ const FormBox = styled.div`
     width: 100%;
     display: inline-block;
     position: relative;
+    left: 40px;
 
 
     @media screen and (max-width: 1000px) {
@@ -95,11 +96,11 @@ const Container = styled.div`
 `
 
 const Heading = styled.div`
-    padding-left: 30px;
     font-size: 2em;
     font-weight: 800;
     width: 50%;
     min-width: 250px;
     line-height: 3em;
     color: white;
+    margin-left: 40px;
 `
