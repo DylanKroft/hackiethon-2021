@@ -39,7 +39,6 @@ const Taskbar = ({email, loggedIn}) => {
 export default Taskbar
 
 const Container = styled.div`
-    border: 1px solid red;
     width: 90%;
     height: 100%;
     max-height: 650px;
