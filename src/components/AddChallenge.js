@@ -20,9 +20,12 @@ const AddChallenge = ({ friendEmail }) => {
         } 
     }
 
-    let challenge = "";
-
     const sendData = () => {
+
+        var button = document.querySelector("#Challenge_1");
+        
+        let challenge = button.value;
+        console.log(challenge);
 
         if (friendData.description != "") {
             friendData.description = friendData.description + challenge + ",";
@@ -35,10 +38,10 @@ const AddChallenge = ({ friendEmail }) => {
 
     return (
             <Container>
-                <But1 onClick={sendData} value={"Pushup"}></But1>
-                <But1 onClick={sendData} value={"Pushdown"}></But1>
-                <But1 onClick={sendData} value={"Pushright"}></But1>
-                <But1 onClick={sendData} value={"Pushleft"}></But1>
+                <button id="Challenge_1" onClick={sendData} value={"Pushup"}></button>
+                <button onClick={sendData} value={"Pushdown"}></button>
+                <button onClick={sendData} value={"Pushright"}></button>
+                <button onClick={sendData} value={"Pushleft"}></button>
 
             </Container>
     )
