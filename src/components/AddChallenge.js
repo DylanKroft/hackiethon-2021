@@ -6,11 +6,12 @@ import React, { useState, useEffect } from 'react';
 const AddChallenge = ({ friendEmail }) => {
 
     const { Frame, sync, configureFrame } = useEasybase();
-
+    console.log("JSDFSDFSDF" + friendEmail)
     useEffect(() => {
         configureFrame({limit: 20 });
         sync();
     }, []);
+
     var friendData = "";
     for (let i = 0; i < Frame().length; i++){
 
@@ -35,11 +36,9 @@ const AddChallenge = ({ friendEmail }) => {
     }
     return (
             <Container>
-                <button id="Challenge_1" onClick={sendData} value={"Pushup"}></button>
-                <button onClick={sendData} value={"Pushdown"}></button>
-                <button onClick={sendData} value={"Pushright"}></button>
-                <button onClick={sendData} value={"Pushleft"}></button>
-
+                <button id={"Challenge_1"}onClick={sendData} value={"PushDown"}></button>
+                <button onClick={sendData} value={"PushSide"}></button>
+                <button onClick={sendData} value={"Push"}></button>
             </Container>
     )
 }

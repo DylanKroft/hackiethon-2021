@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 
 const Profile = ({d, usrName, usrEmail, loggedIn, isFriend}) => {
 
+    
     return (
         <Container>
             <Header del={d} log={loggedIn} name={usrName} usrEmail={usrEmail} friend={isFriend}/>
