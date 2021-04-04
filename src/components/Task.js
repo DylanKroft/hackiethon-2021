@@ -29,7 +29,6 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
 
     const grow = () => {
 
-        setDone(false)
         let modified = []
 
         for (let i = 0; i < task.length; i ++){
@@ -51,9 +50,12 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
                 newString += modified[i] + ",";
             }
         }
-            name.description = newString;
-            name.score += 1;
-            sync();
+            if (done){
+                name.description = newString;
+                name.score += 1;
+                sync();
+            }
+            setDone(false);
         }
 
 

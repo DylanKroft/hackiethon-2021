@@ -95,7 +95,7 @@ const FormBox = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-left: 20%;
+    margin-left: 22%;
 
 
     @media screen and (max-width: 800px) {
