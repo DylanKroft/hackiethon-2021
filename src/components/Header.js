@@ -3,9 +3,11 @@ import MyButton from './MyButton.js';
 import React, { useState, useEffect } from 'react';
 import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
+import DisplayFriend from './DisplayFriend';
+
 let buttonText = "Add Task"
 
-const Header = ({name, usrEmail, log, friend}) => {
+const Header = ({del, name, usrEmail, log, friend}) => {
 
     const [showAdd, setShowAdd] = useState(false);
 
@@ -36,6 +38,9 @@ const Header = ({name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
+                <But onClick={del}>
+                    Abandon              
+                </But>
             </Container>
         )
     }
@@ -70,4 +75,23 @@ const Buttonbox = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+`
+
+const But = styled.div`
+    width: 80px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+ 
+    :hover {
+        cursor: pointer;
+        background: #ffb11b;
+        border-radius: 8px;
+    }
+
+
+    background-color: #ffa500;
+
 `
