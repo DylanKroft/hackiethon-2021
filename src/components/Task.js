@@ -3,7 +3,7 @@ import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import Taskbar from './Taskbar';
-
+import ReactTooltip from 'react-tooltip';
 
 const Task = ({taskText, id, em, task, deleted_shit, name}) => {
 
@@ -14,62 +14,72 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
         sync();
       }, []);
 
-    var ID = id;
     const [done, setDone] = useState(false);
 
-    // console.log(task)
-    // console.log(deleted_shit)
-
     const completeTask = () => {
- 
-        if (!done) {
-            deleted_shit.splice(id, 1, task[id])
-            task.splice(id, 1, "")
+
+        if (!done){
+            deleted_shit.splice(id, 1, task[id]);
             setDone(true)
-        } 
-        else {
-            console.log(task[id])
-            task.splice(id, 1, deleted_shit[id])
-            deleted_shit.splice(id, 1, "")
+        } else {
+            deleted_shit.splice(id, 1, "");
             setDone(false)
-        } 
-        let modifiedDescription = change_description(task);
-        name.description = modifiedDescription;
-        sync();
+        }           
     }
 
-    console.log(name)
+    const grow = () => {
 
+        setDone(false)
+        let modified = []
 
+        for (let i = 0; i < task.length; i ++){
 
-    function change_description( array ){
+            if ((i != id || !done) && task[i] != ""){
+                modified.push(task[i])
+            }
+        }
 
         let newString = "";
         
-        for (let i = 0; i < array.length; i++){
-            if (array[i] != "") {
+        for (let i = 0; i < modified.length; i++){
 
-                if (newString.length == 0){
-                    newString = array[i] + ",";
-                } else {
-                    newString += array[i] + ",";
-                }
+            if (newString.length == 0){
+                newString = modified[i] + ","
+            } else if ( i == modified.length - 1) {
+                newString += modified[i];
+            } else {
+                newString += modified[i] + ",";
             }
         }
-        console.log("stirng changed: ", newString)
-        return newString;
-    }
+            name.description = newString;
+            sync();
+        }
 
 
-    return (
-        <Container d={done}>
-            <CompleteButton><Circle onClick={completeTask} d={done}/></CompleteButton>
-            <Text d={done}>{taskText}</Text>
-        </Container> 
-    )
+        return (
+            <Container d={done}>
+                <CompleteButton d={done}>
+                    <Circle onClick={completeTask} d={done}/>
+                </CompleteButton>
+                <Text d={done}>{taskText}</Text>
+                <But d={done}>
+                    <Circle onClick={grow}></Circle>
+                    </But>
+            </Container> 
+        )
 }
 
 export default Task
+
+const But = styled.div`
+    position: relative;
+    height: 100%;
+    width: 60px;
+    background-color: none;
+    border-radius: 0 10px 10px 0;
+    ${({d}) => d && 'background-color: rgba(119, 221, 119, 1);'}
+`
+
 
 const Container = styled.div`
     width: 100%;
@@ -77,7 +87,7 @@ const Container = styled.div`
     display: flex;
     background-color: rgba(41, 179, 158, 0.5);
     margin-bottom: 5px;
-    justify-content: flex-start;
+    justify-content: space-between;
     overflow-x: hidden;
     border-radius: 10px;
     ${({d}) => d && 'background-color: rgba(41, 179, 158, 1);'}
