@@ -67,6 +67,7 @@ const LoginBox = styled.div`
 const Container = styled.div`
     width: 300px;
     height: 400px;
+    border: 2px solid white;
     background-color: rgba(210,180,108, 0.7);
     position: relative;
     left: calc(50% - 150px);
@@ -74,5 +75,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 15px;
+    color: white;
 `

@@ -64,11 +64,15 @@ const AddFriend = ( ) => {
 export default AddFriend;
 
 const Panda = styled.div`
+    flex: 0.8;
+    height: 100%;
 `
 
 const FormBox = styled.div`
+    flex: 2.2;
     width: 100%;
-    padding-left: calc(40px + 3%);
+    display: flex;
+    align-items: center;
 
 
     @media screen and (max-width: 800px) {
@@ -89,7 +93,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 35%;
+    justify-content: space-around;
+    top: calc(50% - 225px);
     left: 2%;
     border-radius: 10px 10px 10px 10px;
     
@@ -104,8 +109,11 @@ const Container = styled.div`
 `
 
 const Heading = styled.div`
-    padding-left: 30px;
+    flex: 1.5;
     font-size: 2em;
     font-weight: 800;
     color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
 `
