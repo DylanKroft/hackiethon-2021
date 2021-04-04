@@ -49,6 +49,13 @@ const Footer = styled.div`
 `
 
 const LoginBox = styled.div`
+    width: 100vw;
+    height: 100vh;
     background-image: url(${bg});
+    background-size: cover;
+
+    @media screen and (max-width: 800px) {
+     {
+    }
 
 `
