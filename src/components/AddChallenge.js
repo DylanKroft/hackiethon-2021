@@ -3,12 +3,43 @@ import './AddFriend1.css'
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
 
-const AddChallenge = () => {
+const AddChallenge = ({ friendEmail }) => {
+
+    const { Frame, sync, configureFrame } = useEasybase();
+
+    useEffect(() => {
+        configureFrame({limit: 20 });
+        sync();
+    }, []);
+
+    var friendData = "";
+    for (let i = 0; i < Frame().length; i++){
+
+        if (friendEmail == Frame()[i].name){
+            friendData = Frame()[i];
+        } 
+    }
+
+    let challenge = "";
+
+    const sendData = () => {
+
+        if (friendData.description != "") {
+            friendData.description = friendData.description + challenge + ",";
+        } else {
+            friendData.description = challenge + ",";
+        }
+        sync()
+    }
+
+
     return (
             <Container>
-                <But1>
+                <But1 onClick={sendData} value={"Pushup"}></But1>
+                <But1 onClick={sendData} value={"Pushdown"}></But1>
+                <But1 onClick={sendData} value={"Pushright"}></But1>
+                <But1 onClick={sendData} value={"Pushleft"}></But1>
 
-                </But1>
             </Container>
     )
 }

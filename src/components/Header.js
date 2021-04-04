@@ -16,7 +16,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
 
     const handleChal =() => {
         setShowChal(!showChal);
-        
+
         if(showChal) {
             bText = "Challenge";
         } else {
@@ -53,6 +53,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
+                {showChal && <AddChallenge friendEmail={usrEmail}/>}
                 <But onClick={del}>
                     Abandon              
                 </But>
