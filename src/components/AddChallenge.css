@@ -1,26 +1,36 @@
-.buttonBox {
-  background-color: #027524;
-  color: white;
+.butt {
+  background-color: #ffa500;
   border: none;
-  text-align: center;
-  display: inline-block;
-  border-radius: 0 0 10px 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-  width: 100%;
+  width: 100px;
   height: 100px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
+  border-radius: 500px;
+  margin: 10px;
+  border: 2px solid white;
 }
 
-.buttonBox:hover {
-  background-color: #039c31;
-}
-
-.buttonBox:focus {
+.butt:focus {
   outline: none;
 }
 
-.buttonBox:active {
-  background-color: #0ad648;
+.butt:hover {
+  cursor: pointer;
+  background: #ffb11b;
+  border-radius: 8px;
+  border-radius: 500px;
+}
+
+.butt:active {
+  background-color: #e07800;
+  border-radius: 500px;
+}
+
+.icons {
+  font-size: 5em;
+  fill: white;
+  transition: filter ease 3000ms;
+}
+
+.icons:hover {
+  filter: invert(38%) sepia(83%) saturate(2593%) hue-rotate(331deg)
+    brightness(106%) contrast(94%);
 }

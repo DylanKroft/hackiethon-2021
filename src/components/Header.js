@@ -64,11 +64,14 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
+                <Buttonbox>
+
                 <MyButton ButtonText={bText} onSetAdd={handleChal}/>
                 {showChal && <AddChallenge friendEmail={usrEmail} ownerEmail={ownerEmail}/>}
 
-                <But onClick={del}> Abandon  </But>
-            </Container>
+                <But onClick={del}> Abandon </But>
+                </Buttonbox>
+             </Container>
         )
     }
   
@@ -106,12 +109,16 @@ const Buttonbox = styled.div`
 `
 
 const But = styled.div`
-    width: 80px;
+    width: 60px;
     font-weight: 600;
     text-align: center;
     padding: 10px;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    height: 17px;
+    margin-right: 20px;
  
     :hover {
         cursor: pointer;
