@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import styled from 'styled-components'
-import './AddFriend.css'
+import './AddFriend1.css'
 import panda from'../bamboo/panda.gif';
 import Task from './Task';
 import Profile from './Profile';
@@ -102,7 +102,8 @@ const FormBox = styled.div`
     flex: 2.2;
     width: 100%;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin-left: 22%;
 
 
     @media screen and (max-width: 800px) {

@@ -1,6 +1,6 @@
 @font-face {
   font-family: logo;
-  src: url("./bamboo/leaves_and_ground.ttf");
+  src: url("./bamboo/NovaMono-Regular.ttf");
 }
 .button {
   width: 100px;
@@ -19,7 +19,6 @@
   display: flex;
   padding-top: 40px;
   flex-direction: column;
-  font-family: Fantasy;
-  font-size: 3em;
-  font-weight: bold;
+  font-family: logo;
+  font-size: 4em;
 }

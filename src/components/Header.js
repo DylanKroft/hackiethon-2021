@@ -24,7 +24,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
     if (!friend) {
         return (
             <Container>
-                {showAdd && <AddTask email={usrEmail} loggedIn={log} />}
+                {showAdd && <AddTask displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
                 <Heading>{name}'s Tasks</Heading>
                 <Buttonbox>
                     <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>

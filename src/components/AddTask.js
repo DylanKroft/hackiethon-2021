@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import './AddTask.css'
+import './AddFriend1.css'
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
 
-const AddTask = ( {email, loggedIn}) => {
+const AddTask = ( {email, loggedIn, displayAdd}) => {
 
     const [inputValue, setInputValue] = React.useState("");
     const { Frame, sync, configureFrame } = useEasybase();
@@ -30,6 +30,8 @@ const AddTask = ( {email, loggedIn}) => {
         setInputValue("");
         data.description = data.description + "," + inputValue;
         sync();
+        displayAdd();
+
     }
 
     return (
@@ -58,9 +60,10 @@ export default AddTask
 
 const FormBox = styled.div`
     width: 100%;
-    display: inline-block;
-    position: relative;
-    left: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 40px;
 
 
     @media screen and (max-width: 1000px) {

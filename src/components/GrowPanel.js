@@ -31,7 +31,7 @@ const GrowPanel = ({email, loggedIn}) => {
         }
 
         for (let i = 0; i < bambooCount; i++) {
-            let item = bambooArray[Math.floor(Math.random() * 4)];
+            let item = bambooArray[Math.floor(i%3)];
             bambooPieces.push(<BambooPiece pic={item}/>);
         }
     }
