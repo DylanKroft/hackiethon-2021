@@ -5,6 +5,7 @@ import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
 import DisplayFriend from './DisplayFriend.js';
 import AddChallenge from './AddChallenge.js'
+import { queryByTestId } from '@testing-library/dom';
 
 let buttonText = "Add Task"
 let bText = "Challenge"
@@ -20,9 +21,8 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         ownerEmail = usrEmail;
     }
 
-    console.log("l14: ", yesFriend);
-
     const handleChal =() => {
+
         if(showAdd == false) {
             setShowChal(!showChal);
 
@@ -50,7 +50,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
     if (!friend) {
         return (
             <Container>
-                {showAdd && <AddTask displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
+                {showAdd && <AddTask id={"addTask"} displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
                 <Heading>{name}'s Tasks</Heading>
                 <Buttonbox>
                     <MyButton ButtonText={buttonText} onSetAdd={handleClick}/>

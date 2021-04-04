@@ -36,13 +36,9 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
 
     const sendData1 = () => {
 
-        var button = document.querySelector("#Challenge_1");
-        challenge = button.value;
-
-        if (friendData.description != "") {
-            friendData.description = challenge + "," + friendData.description;
-        } else {
-            friendData.description = challenge + ",";
+        if (ownerData.score < 3){
+            alert("Not enough bamboos! Three bamboos required to send challenge.")
+            return;
         }
 
         if (ownerData.score >= 3){
@@ -53,10 +49,24 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
             ownerData.score = 0;
         }
 
+        var button = document.querySelector("#Challenge_1");
+        challenge = button.value;
+
+        if (friendData.description != "") {
+            friendData.description = challenge + "," + friendData.description;
+        } else {
+            friendData.description = challenge + ",";
+        }
+
         sync()
     }
 
     const sendData2 = () => {
+
+        if (ownerData.score < 3){
+            alert("Not enough bamboos! Three bamboos required to send challenge.")
+            return;
+        }
 
         var button = document.querySelector("#Challenge_2");
         challenge = button.value;
@@ -75,6 +85,10 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
     }
 
     const sendData3 = () => {
+        if (ownerData.score < 3){
+            alert("Not enough bamboos! Three bamboos required to send challenge.")
+            return;
+        }
 
         var button = document.querySelector("#Challenge_3");
         challenge = button.value;
@@ -93,6 +107,10 @@ const AddChallenge = ({ friendEmail , ownerEmail}) => {
     }
 
     const sendData4 = () => {
+        if (ownerData.score < 3){
+            alert("Not enough bamboos! Three bamboos required to send challenge.")
+            return;
+        }
 
         var button = document.querySelector("#Challenge_4");
         challenge = button.value;
