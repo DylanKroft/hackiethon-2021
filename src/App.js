@@ -8,6 +8,7 @@ import { EasybaseProvider, useEasybase } from 'easybase-react';
 import ebconfig from './ebconfig';
 import { useAuth0 } from '@auth0/auth0-react';
 import bg from'./bamboo/Login.png';
+import panda from'./bamboo/panda.gif';
 
 function App() {
 
@@ -29,7 +30,10 @@ function App() {
      return(
      <LoginBox>
         <Container>
-        <h1 class = "logo"> {a} </h1>
+        <h1 class = "logo">{a}</h1>
+          <Panda>
+                <img className="panda" src={panda} alt="loading..." />
+            </Panda>
           <LoginButton />
         </Container>
      </LoginBox>
@@ -79,8 +83,11 @@ box-shadow: 0px 0px 11px -4px rgba(71,71,71,1);
     color: white;
     display: flex;
     flex-direction: column;
-    background: rgb(240,216,144);
-background: linear-gradient(355deg, rgba(240,216,144,1) 42%, rgba(186,147,23,1) 83%);
+    background-color: #fffce6;
+`
 
-
+const Panda = styled.div`
+height: 0px;
+position: relative;
+top: -110px;
 `
