@@ -1,10 +1,9 @@
 import './App.css';
-import LogoutButton from './components/LogoutButton'
 import Home from './components/Home'
 import LoginButton from './components/LoginButton';
 import styled from 'styled-components'
-import React, { useState, useEffect } from 'react';
-import { EasybaseProvider, useEasybase } from 'easybase-react';
+import React from 'react';
+import { EasybaseProvider} from 'easybase-react';
 import ebconfig from './ebconfig';
 import { useAuth0 } from '@auth0/auth0-react';
 import bg from'./bamboo/Login.gif';
