@@ -11,7 +11,6 @@ const AddChallenge = ({ friendEmail }) => {
         configureFrame({limit: 20 });
         sync();
     }, []);
-
     var friendData = "";
     for (let i = 0; i < Frame().length; i++){
 
@@ -34,8 +33,6 @@ const AddChallenge = ({ friendEmail }) => {
         }
         sync()
     }
-
-
     return (
             <Container>
                 <button id="Challenge_1" onClick={sendData} value={"Pushup"}></button>
@@ -64,6 +61,7 @@ const Container = styled.div`
     -webkit-box-shadow: 0px 0px 27px -15px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 27px -15px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 27px -15px rgba(0,0,0,0.75);
+    display: flex;
 
     @media screen and (max-width: 1000px) {
      {

@@ -11,26 +11,32 @@ let bText = "Challenge"
 
 const Header = ({del, name, usrEmail, log, friend}) => {
 
+    console.log("l14: ", usrEmail);
+
+    const [showChal, setShowChal] = useState(usrEmail);
     const [showAdd, setShowAdd] = useState(false);
-    const [showChal, setShowChal] = useState(true);
-
     const handleChal =() => {
-        setShowChal(!showChal);
+        if(showAdd == false) {
+            setShowChal(!showChal);
 
-        if(showChal) {
-            bText = "Challenge";
-        } else {
-            bText = "Close";
-        }
+            if(showChal) {
+                bText = "Challenge";
+            } else {
+                bText = "Close";
+            }
+        } 
     }
 
     const handleClick = () => {
-        setShowAdd(!showAdd);
+        if(showChal == false) {
 
-        if(showAdd) {
-            buttonText = "Add Task";
-        } else {
-            buttonText = "Close";
+            setShowAdd(!showAdd);
+
+            if(showAdd) {
+                buttonText = "Add Task";
+            } else {
+                buttonText = "Close";
+            }
         }
     }
     
@@ -53,7 +59,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
-                {showChal && <AddChallenge friendEmail={usrEmail}/>}
+                {true && <AddChallenge friendEmail={usrEmail}/>}
                 <But onClick={del}>
                     Abandon              
                 </But>
@@ -80,11 +86,12 @@ const Heading = styled.div`
     font-size: 1.5em;
     font-weight: 800;
     width: 50%;
-    min-width: 250px;
+    min-width: 220px;
     height: 100%;
-    line-height: 5em;
+    line-height: 4.2em;
     color: #29b39e;
     text-align: left;
+    overflow-x: hidden;
 `
 
 const Buttonbox = styled.div`
