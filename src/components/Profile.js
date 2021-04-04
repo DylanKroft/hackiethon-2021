@@ -12,7 +12,7 @@ const Profile = ({usrName, usrEmail, loggedIn}) => {
             <Header name={usrName}/>
             <TaskSection>
                 <Taskbar email={usrEmail} loggedIn={loggedIn}/>
-                <GrowPanel />
+                <GrowPanel email={usrEmail} loggedIn={loggedIn}/>
             </TaskSection>
         </Container>
     )
@@ -23,14 +23,11 @@ export default Profile
 const Container = styled.div`
     width: 50%;
     height: 100%;
-    min-width: 400px;
-    background-color: #eaddb6;
+    min-width: 500px;
     justify-content: space-space-around;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (max-width: 800px) {
+    
+    @media screen and (max-width: 1000px) {
      {
          width: 100%;
     }
@@ -38,10 +35,9 @@ const Container = styled.div`
 `
 const TaskSection = styled.div`
     width: 95%;
-    background-color: #eaddb6;
     display: flex;
     border: 2px solid white;
     border-radius: 15px;
-    overflow-y: scroll;
     height: 75%;
+    margin-left: 15px;
 `
