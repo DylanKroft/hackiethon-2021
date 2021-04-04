@@ -27,25 +27,18 @@ const DisplayFriend = () => {
     const addFriend = (e) => {
 
         e.preventDefault();
-        console.log(inputValue);
-        console.log(added)
 
         for (let i = 0; i < Frame().length; i++){
 
             if (inputValue == Frame()[i].name){
-                console.log("here 31:", Frame()[i])
                 let friendEmail = Frame()[i].name;
-                console.log("line 36:", Frame()[i].realname);
                 setAddedValue(true);
-                console.log("line 404004", Frame()[i])
                 setFriendTasks(friendEmail);
                 setFriendName(Frame()[i].realname)
             }
         }
         setInputValue("");
     } 
-
-    console.log(added)
 
     if (!added){
         return (
