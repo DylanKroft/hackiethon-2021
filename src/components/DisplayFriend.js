@@ -76,7 +76,7 @@ const DisplayFriend = () => {
     else {
         return (
             <>
-                <Profile usrName={friendName} usrEmail={friendEmail} loggedIn={true}/>
+                <Profile usrName={friendName} usrEmail={friendEmail} loggedIn={true} isFriend={true}/>
             </>
         )
     }

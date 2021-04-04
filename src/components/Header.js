@@ -3,6 +3,8 @@ import MyButton from './MyButton.js';
 import React, { useState, useEffect } from 'react';
 import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
+import DisplayFriend from './DisplayFriend';
+
 let buttonText = "Add Task"
 
 const Header = ({name, usrEmail, log, friend}) => {
