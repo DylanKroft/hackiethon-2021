@@ -92,7 +92,7 @@ const Container = styled.div`
     position: fixed;
     z-index: 100;
     top: 0;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 15px;
 
     @media screen and (max-width: 800px) {
      {

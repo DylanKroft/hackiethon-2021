@@ -39,6 +39,8 @@ const Text = styled.div`
     padding: 0px; 
     margin: 0px;
     line-height: 3.4em;
+    overflow-y: hidden;
+
     ${({d}) => d && '  text-decoration: line-through;'}
 `
 
