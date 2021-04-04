@@ -13,6 +13,7 @@ const Taskbar = ({email, loggedIn}) => {
     }, []);
 
     let tasks = [];
+    let deleted_shit = []
 
     //gets description for username
     if(loggedIn) {
@@ -21,14 +22,18 @@ const Taskbar = ({email, loggedIn}) => {
                 tasks = Frame()[i].description.split(",")
             }
         }
+
+        for (let i = 0; i < tasks.length; i ++){
+            deleted_shit[i] = "";
+        }
+    
     }
     
-
     if (loggedIn) {
         return (
             <Container>
             {tasks.map((ele,i) => (
-                    <Task em={email} taskText={ele} id={i} />
+                    <Task em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} />
                 ))}
 
             </Container>
