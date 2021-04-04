@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import styled from 'styled-components'
+import Tooltip from "@material-ui/core/Tooltip";
 
 const LogoutButton = () => {
     const { logout } = useAuth0();
@@ -10,9 +11,20 @@ const LogoutButton = () => {
     return (
     <>  
         <Container>
-            <But onClick={() => logout()}>
+
+        <Tooltip
+                title="Click here to logout."
+                placement="top"
+            >
+
+<But onClick={() => logout()}>
                 Log Out                
             </But>
+            </Tooltip>
+
+            
+            
+            
         </Container>
     </>
         
