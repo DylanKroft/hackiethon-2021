@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import ebconfig from './ebconfig';
 import { useAuth0 } from '@auth0/auth0-react';
-import bg from'./bamboo/Login.png';
+import bg from'./bamboo/Login.gif';
 import panda from'./bamboo/panda.gif';
 import PlaySound from'./components/Sound'
 
