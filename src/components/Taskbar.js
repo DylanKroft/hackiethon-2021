@@ -39,11 +39,13 @@ const Taskbar = ({email, loggedIn}) => {
 export default Taskbar
 
 const Container = styled.div`
+    border: 1px solid red;
     width: 90%;
     height: 100%;
     max-height: 650px;
     min-width: 300px;
     max-width: 500px;
+    min-height: 600px;
     padding-left: 10px;     
     margin: 0;
     overflow-y: scroll;
