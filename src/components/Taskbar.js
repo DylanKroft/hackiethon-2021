@@ -28,7 +28,7 @@ const Taskbar = ({email, loggedIn}) => {
         return (
             <Container>
             {tasks.map((ele,i) => (
-                    <Task taskText={ele} id={i} />
+                    <Task em={email} taskText={ele} id={i} />
                 ))}
 
             </Container>

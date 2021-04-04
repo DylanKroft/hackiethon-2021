@@ -2,20 +2,20 @@ import styled from 'styled-components'
 import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
 
-const Task = ({taskText, id}) => {
+const Task = ({taskText, id, em}) => {
 
     const [done, setDone] = useState(false);
 
 
     const completeTask = () => {
-        setDone(true)
+        setDone(!done)
         console.log(done);
     }
 
     return (
-        <Container>
-            <CompleteButton><Circle onClick={completeTask} /></CompleteButton>
-            <Text>{taskText}</Text>
+        <Container d={done}>
+            <CompleteButton><Circle onClick={completeTask} d={done}/></CompleteButton>
+            <Text d={done}>{taskText}</Text>
         </Container> 
     )
 }
@@ -31,7 +31,8 @@ const Container = styled.div`
     justify-content: flex-start;
     overflow-x: hidden;
     border-radius: 10px;
-  
+    ${({d}) => d && 'background-color: rgba(41, 179, 158, 1);'}
+
 `
 
 const Text = styled.div`
@@ -40,21 +41,19 @@ const Text = styled.div`
     padding: 0px; 
     margin: 0px;
     line-height: 3.4em;
+    ${({d}) => d && '  text-decoration: line-through;'}
+
 `
 
 const Circle = styled.div`
     width: 30px;
     height: 30px;
+    border: 1.5px solid white;
     border-radius: 500px;
-    background-color: rgba(255, 255, 255, 0.3);
     position: absolute;
     z-index: 10;
     left: 15px;
     top: 20px;
-
-    ${({ done }) => done && `
-        background-color: blue;
-  `}
     
     :hover {
         cursor: pointer;
