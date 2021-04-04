@@ -12,7 +12,8 @@ const Home = ({showTaskAdd}) => {
         isAuthenticated && (
             <div>
                 <Main>
-                    <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated} displayAddTask={showTaskAdd}/>  
+                    <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated} displayAddTask={showTaskAdd}/> 
+                    <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated} displayAddTask={showTaskAdd}/> 
                 </Main>
             </div>
         )

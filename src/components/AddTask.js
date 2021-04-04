@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'; 
+import './AddTask.css'
 
-const AddTask = ({email}) => {
+const AddTask = () => {
 
     const [inputValue, setInputValue] = React.useState("");
 
@@ -15,51 +16,18 @@ const AddTask = ({email}) => {
         setInputValue("");
     }
 
-    const [name, setName] = useState('')
-    const [description, setDescription] = useState('')
-
     return (
         <Container>
             <Heading>Add Task</Heading>
-            
             <FormBox>
-                
                 <form onSubmit={addTask}>
-                    <div>
-                        <label>Task Name </label>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder = 'Add Task Name'
-                            onChange={onChangeHandler}
-                            value={name} onChange ={(e) => setName(e.target.value)}
-                        />
-                    </div>
-                    
-                    <div>
-                        <label>Description </label>
-                        <input 
-                            type = 'Text'
-                            name = 'Description' 
-                            placeholder = 'Add Description'
-                            onChange={onChangeHandler}
-                            value={description} onChange={(e) => setDescription(e.target.value)}
-                        />
-                    </div>
-
-                    <div>
-                        <label>Time taken</label>
-                        <select name ='Time'>
-                            <option>Select Time</option>
-                            <option value = '15'>15 minutes</option>
-                            <option value = '30'>30 minutes</option>
-                            <option value = '60'>1 hour</option>
-                            <option value = '90'>1 hour 30 min</option>
-                            <option value = '120'>2 hour</option>
-                        </select>
-
-                    </div>
-
+                    <input
+                    type="text"
+                    name="name"
+                    onChange={onChangeHandler}
+                    value={inputValue}
+                    autocomplete="off"
+                />
                     <button className="primary__btn" type="submit">
                         Submit
                     </button>
@@ -74,25 +42,31 @@ export default AddTask
 
 const FormBox = styled.div`
     position: fixed;
-    width: 30%;
-    top: 100px;
-    left: 5%;
+    width: 50%;
+    top: 75px;
+    display: inline-block;
 
     @media screen and (max-width: 800px) {
      {
          width: 100%;
     }
-
 `
 
 const Container = styled.div`
     width: 50%;
-    height: 200px;
+    height: 175px;
     background-color: #D6C48F;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     top: 0;
+<<<<<<< HEAD
     border-radius: 15px;
+=======
+    border-radius: 0 0 10px 10px;
+    -webkit-box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
+    box-shadow: -10px 5px 31px -12px rgba(0,0,0,0.75);
+>>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
 
     @media screen and (max-width: 800px) {
      {

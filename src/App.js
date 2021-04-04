@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import ebconfig from './ebconfig';
 import { useAuth0 } from '@auth0/auth0-react';
+import bg from'./bamboo/Login.png';
 
 function App() {
   
@@ -25,9 +26,9 @@ function App() {
    }
    else{
      return(
-     <div>
+     <LoginBox>
       <LoginButton />
-     </div>
+     </LoginBox>
      )
    }
 }
@@ -45,5 +46,13 @@ const Footer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   z-index: 1000;
+=======
+`
+
+const LoginBox = styled.div`
+    background-image: url(${bg});
+
+>>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
 `

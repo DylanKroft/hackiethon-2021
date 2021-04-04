@@ -1,18 +1,23 @@
-import React from 'react'
 import styled from 'styled-components'
 import MyButton from './MyButton.js';
+import React, { useState, useEffect } from 'react';
+import AddTask from './AddTask';
 
-const Header = ({name, showTaskAdd}) => {
+const Header = ({name, usrEmail}) => {
+
+    const [showAdd, setShowAdd] = useState(false);
 
     const handleClick = () => {
-        showTaskAdd = true;
+        setShowAdd(!showAdd);
+        console.log("hi")
     }
+    
     return (
         <Container>
+            {showAdd && <AddTask email={usrEmail}/>}
             <Heading>{name}'s Tasks</Heading>
             <Buttonbox>
-                <MyButton ButtonText= 'Add Task' onClick = {handleClick}/>
-                <MyButton ButtonText= 'Challenge'  onClick = {handleClick}/>
+                <MyButton ButtonText= 'Add Task' onSetAdd = {handleClick}/>
             </Buttonbox>
 
         </Container>
@@ -33,13 +38,13 @@ const Container = styled.div`
 `
 
 const Heading = styled.div`
-    padding-left: 20px;
+    padding-left: 25px;
     font-size: 1.5em;
     font-weight: 800;
     width: 50%;
     min-width: 250px;
     height: 100%;
-    line-height: 4em;
+    line-height: 5em;
     color: #29b39e;
     text-align: left;
 `
