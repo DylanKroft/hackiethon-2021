@@ -19,10 +19,6 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
 
     const completeTask = () => {
 
-
-        console.log("Before", task)
-        console.log("Before: ", deleted_shit)
-
         if (!done){
             deleted_shit.splice(id, 1, task[id]);
             setDone(true)
@@ -30,16 +26,12 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
             deleted_shit.splice(id, 1, "");
             setDone(false)
         }     
-        console.log("after", task)     
-        console.log("after:" , deleted_shit) 
+
     }
 
     const grow = () => {
 
         let modified = []
-
-        console.log("to be modified: ", task);
-        console.log("modified id ", id)
 
         for (let i = 0; i < task.length; i ++){
 

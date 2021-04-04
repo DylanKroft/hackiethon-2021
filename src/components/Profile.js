@@ -6,7 +6,6 @@ import AddTask from './AddTask.js';
 import React, { useState, useEffect } from 'react';
 
 const Profile = ({d, usrName, usrEmail, loggedIn, isFriend}) => {
-
     
     return (
         <Container>

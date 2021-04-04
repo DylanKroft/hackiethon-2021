@@ -4,21 +4,27 @@ import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
 import './AddChallenge.css'
 
-const AddChallenge = ({ friendEmail }) => {
+const AddChallenge = ({ friendEmail , ownerEmail}) => {
 
     const { Frame, sync, configureFrame } = useEasybase();
-    console.log("JSDFSDFSDF" + friendEmail)
+
     useEffect(() => {
         configureFrame({limit: 20 });
         sync();
     }, []);
 
     var friendData = "";
+    var ownerData = "";
+
     for (let i = 0; i < Frame().length; i++){
 
         if (friendEmail == Frame()[i].name){
             friendData = Frame()[i];
         } 
+        
+        if (ownerEmail == Frame()[i].name){
+            ownerData = Frame()[i];
+        }
     }
 
     const sendData = () => {
@@ -26,13 +32,17 @@ const AddChallenge = ({ friendEmail }) => {
         var button = document.querySelector("#Challenge_1");
         
         let challenge = button.value;
-        console.log(challenge);
 
         if (friendData.description != "") {
             friendData.description = friendData.description + challenge + ",";
         } else {
             friendData.description = challenge + ",";
         }
+
+        if (ownerData.score > 3){
+            ownerData.score -= 3;
+        }
+
         sync()
     }
     return (
