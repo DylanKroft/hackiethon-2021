@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import styled from 'styled-components'
-import './AddTask.css'
+import './AddFriend.css'
 import panda from'../bamboo/panda.gif';
 import Task from './Task';
 import Profile from './Profile';

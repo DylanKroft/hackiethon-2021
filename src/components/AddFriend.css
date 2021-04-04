@@ -1,0 +1,46 @@
+input[type="text"] {
+  width: 60%;
+  height: 50px;
+  font-size: 1.25em;
+  font-weight: 600;
+  box-sizing: border-box;
+  border: none;
+  margin-right: 30px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.panda {
+  height: 10em;
+}
+
+.primary__btn {
+  background-color: #29b39e;
+  border-radius: 8px;
+  height: 40px;
+  width: 80px;
+  font-size: 1em;
+  font-weight: 600;
+  color: white;
+  border: none;
+}
+
+.primary__btn:hover {
+  cursor: pointer;
+  background: #389e8f;
+  border-radius: 8px;
+}
+
+.primary__btn:active {
+  background-color: #0f7e9a;
+}
+
+.primary__btn:focus {
+  outline: none;
+}
