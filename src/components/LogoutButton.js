@@ -24,7 +24,7 @@ export default LogoutButton
 const Container = styled.div`
     background: #ffa500;
     margin: 2px;
-    margin-right: 10px;
+    margin-right: 18px;
     border-radius: 8px;
     border-width: 5px solid #ffa500;
     width: 100px;

@@ -20,7 +20,6 @@ function App() {
         <EasybaseProvider ebconfig={ebconfig}>
           <Home />
             <Footer>
-            <LogoutButton/>
           </Footer>
         </EasybaseProvider>
       </Main>

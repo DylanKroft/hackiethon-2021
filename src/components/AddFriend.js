@@ -55,18 +55,20 @@ const FormBox = styled.div`
 const Container = styled.div`
     width: 45%;
     height: 200px;
-    background-color: #D6C48F;
+    background-color: #f0d890;
     border: 2px solid white;
     position: relative;
     z-index: 1000;
     top: 35%;
     left: 2%;
     border-radius: 10px 10px 10px 10px;
+    
 
     @media screen and (max-width: 1000px) {
      {  
         width: 90%;
         left: 5%;
+        right: 5%;
         top: 0%;
     }
 `
