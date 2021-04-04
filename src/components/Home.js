@@ -6,8 +6,8 @@ import DisplayFriend from './DisplayFriend.js';
 
 const Home = ({showTaskAdd}) => {
 
-
     const { user, isAuthenticated } = useAuth0();
+
     return (
         isAuthenticated && (
             <div>

@@ -8,12 +8,18 @@ import AddChallenge from './AddChallenge.js'
 
 let buttonText = "Add Task"
 let bText = "Challenge"
+var ownerEmail = "";
 
 const Header = ({del, name, usrEmail, log, friend}) => {
 
     const [yesFriend, setYesFriend] = useState(friend);
     const [showChal, setShowChal] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
+
+    if (ownerEmail == "" && usrEmail != ""){
+        ownerEmail = usrEmail;
+    }
+
     console.log("l14: ", yesFriend);
 
     const handleChal =() => {
@@ -61,7 +67,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
                 <Buttonbox>
 
                 <MyButton ButtonText={bText} onSetAdd={handleChal}/>
-                {showChal && <AddChallenge friendEmail={usrEmail}/>}
+                {showChal && <AddChallenge friendEmail={usrEmail} ownerEmail={ownerEmail}/>}
 
                 <But onClick={del}> Abandon </But>
                 </Buttonbox>

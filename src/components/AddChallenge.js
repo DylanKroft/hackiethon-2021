@@ -10,21 +10,27 @@ import { GiGymBag } from "react-icons/gi"
 import {GiMeditation} from "react-icons/gi"
 
 
-const AddChallenge = ({ friendEmail }) => {
+const AddChallenge = ({ friendEmail , ownerEmail}) => {
 
     const { Frame, sync, configureFrame } = useEasybase();
-    console.log("JSDFSDFSDF" + friendEmail)
+
     useEffect(() => {
         configureFrame({limit: 20 });
         sync();
     }, []);
 
     var friendData = "";
+    var ownerData = "";
+
     for (let i = 0; i < Frame().length; i++){
 
         if (friendEmail == Frame()[i].name){
             friendData = Frame()[i];
         } 
+        
+        if (ownerEmail == Frame()[i].name){
+            ownerData = Frame()[i];
+        }
     }
 
     const sendData = () => {
@@ -41,6 +47,11 @@ const AddChallenge = ({ friendEmail }) => {
         } else {
             friendData.description = challenge + ",";
         }
+
+        if (ownerData.score > 3){
+            ownerData.score -= 3;
+        }
+
         sync()
     }
     return (

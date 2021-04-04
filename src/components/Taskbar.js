@@ -34,7 +34,7 @@ const Taskbar = ({name, email, loggedIn, friend}) => {
         return (
             <Container>
             {tasks.filter(ele => ele != "").map((ele,i) => (
-                <Task name={name} em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} />
+                <Task name={name} em={email} taskText={ele} id={i} task={tasks} deleted_shit={deleted_shit} isFriend={friend} />
             ))}
             </Container>
         )
