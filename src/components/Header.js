@@ -116,8 +116,8 @@ const But = styled.div`
  
     :hover {
         cursor: pointer;
-        background: #ffb11b;
+        background: #b82d13;
         border-radius: 8px;
     }
-    background-color: #ffa500;
+    background-color: #9a220b;
 `
