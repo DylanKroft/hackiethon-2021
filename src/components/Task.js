@@ -77,10 +77,13 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
                         <Circle onClick={completeTask} d={done}/>
                     </CompleteButton>
                     <Text d={done}>{taskText}</Text>
+                    <Icon>
+                    <img src = {icon} alt = "grow"></img> 
                     <But d={done}>
-                        <Circle onClick={grow}>
+                        <Circle onClick={grow}>        
                         </Circle>
-                        </But>
+                    </But>  
+                    </Icon>    
                 </Container> 
             )
         }
@@ -158,4 +161,10 @@ const CompleteButton = styled.div`
     width: 60px;
     background-color: #29B39E;
     margin-right: 10px;
+`
+
+const Icon = styled.div`
+    display: flex;
+    justify-content: flex-end
+
 `
