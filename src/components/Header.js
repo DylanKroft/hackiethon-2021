@@ -5,7 +5,7 @@ import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
 let buttonText = "Add Task"
 
-const Header = ({name, usrEmail}) => {
+const Header = ({name, usrEmail, log}) => {
 
     const [showAdd, setShowAdd] = useState(false);
 
@@ -19,10 +19,11 @@ const Header = ({name, usrEmail}) => {
         }
     }
 
+    console.log("header email: ", usrEmail);
     
     return (
         <Container>
-            {showAdd && <AddTask email={usrEmail}/>}
+            {showAdd && <AddTask email={usrEmail} loggedIn={log} />}
             <Heading>{name}'s Tasks</Heading>
             <Buttonbox>
                 <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>
