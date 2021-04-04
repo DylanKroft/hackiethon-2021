@@ -11,10 +11,11 @@ let bText = "Challenge"
 
 const Header = ({del, name, usrEmail, log, friend}) => {
 
-    console.log("l14: ", usrEmail);
-
-    const [showChal, setShowChal] = useState(usrEmail);
+    const [yesFriend, setYesFriend] = useState(friend);
+    const [showChal, setShowChal] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
+    console.log("l14: ", yesFriend);
+
     const handleChal =() => {
         if(showAdd == false) {
             setShowChal(!showChal);
@@ -44,11 +45,9 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 {showAdd && <AddTask displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
-                {showChal && <AddChallenge/>}
                 <Heading>{name}'s Tasks</Heading>
                 <Buttonbox>
                     <MyButton ButtonText={buttonText} onSetAdd={handleClick}/>
-                    <MyButton ButtonText={bText} onSetAdd={handleChal}/>
                     <LogoutButton/>
                 </Buttonbox>
     
@@ -59,11 +58,14 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
-                {true && <AddChallenge friendEmail={usrEmail}/>}
-                <But onClick={del}>
-                    Abandon              
-                </But>
-            </Container>
+                <Buttonbox>
+
+                <MyButton ButtonText={bText} onSetAdd={handleChal}/>
+                {showChal && <AddChallenge friendEmail={usrEmail}/>}
+
+                <But onClick={del}> Abandon </But>
+                </Buttonbox>
+             </Container>
         )
     }
   
@@ -101,20 +103,21 @@ const Buttonbox = styled.div`
 `
 
 const But = styled.div`
-    width: 80px;
+    width: 60px;
     font-weight: 600;
     text-align: center;
     padding: 10px;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    height: 17px;
+    margin-right: 20px;
  
     :hover {
         cursor: pointer;
         background: #ffb11b;
         border-radius: 8px;
     }
-
-
     background-color: #ffa500;
-
 `

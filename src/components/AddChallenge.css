@@ -1,0 +1,36 @@
+.butt {
+  background-color: #ffa500;
+  border: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 500px;
+  margin: 10px;
+  border: 2px solid white;
+}
+
+.butt:focus {
+  outline: none;
+}
+
+.butt:hover {
+  cursor: pointer;
+  background: #ffb11b;
+  border-radius: 8px;
+  border-radius: 500px;
+}
+
+.butt:active {
+  background-color: #e07800;
+  border-radius: 500px;
+}
+
+.icons {
+  font-size: 5em;
+  fill: white;
+  transition: filter ease 3000ms;
+}
+
+.icons:hover {
+  filter: invert(38%) sepia(83%) saturate(2593%) hue-rotate(331deg)
+    brightness(106%) contrast(94%);
+}
