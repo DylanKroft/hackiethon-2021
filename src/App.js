@@ -43,7 +43,8 @@ const Footer = styled.div`
   bottom: 0;
   height: 80px;
   width: 100%;
+  opacity: 0.5;
   display: flex;
   align-items: center;
-  z-index: 1000;
+  background-color: #eaddb6;
 `

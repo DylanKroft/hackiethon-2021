@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import bg from'../bamboo/bg.png';
 
 const GrowPanel = () => {
     return (
@@ -12,7 +12,7 @@ const GrowPanel = () => {
 export default GrowPanel
 
 const Container = styled.div`
-
+    //background-image: url(${bg});
     height: 100%;
     width: 50%;
     height: 100vh;

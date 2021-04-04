@@ -2,14 +2,31 @@ import styled from 'styled-components'
 import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
 
-const Task = ({taskText, id, em}) => {
 
+const Task = ({taskText, id, em, task, deleted_shit}) => {
+
+
+    var ID = id;
     const [done, setDone] = useState(false);
 
+    console.log(task)
+    console.log(deleted_shit)
+
     const completeTask = () => {
-        setDone(!done)
-        console.log(done);
+ 
+        if (!done) {
+            deleted_shit.splice(id, 1, task[id])
+            task.splice(id, 1, "")
+            setDone(true)
+        } 
+        else {
+            console.log(task[id])
+            task.splice(id, 1, deleted_shit[id])
+            deleted_shit.splice(id, 1, "")
+            setDone(false)
+        } 
     }
+
 
     return (
         <Container d={done}>
@@ -39,8 +56,6 @@ const Text = styled.div`
     padding: 0px; 
     margin: 0px;
     line-height: 3.4em;
-    overflow-y: hidden;
-
     ${({d}) => d && '  text-decoration: line-through;'}
 `
 
