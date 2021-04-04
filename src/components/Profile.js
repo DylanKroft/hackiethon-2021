@@ -24,14 +24,8 @@ const Container = styled.div`
     width: 50%;
     height: 100%;
     min-width: 400px;
-<<<<<<< HEAD
     background-color: #eaddb6;
     justify-content: space-space-around;
-=======
-    margin: 0;
-    padding: 0;
-    justify-content: center;
->>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -43,7 +37,6 @@ const Container = styled.div`
 }
 `
 const TaskSection = styled.div`
-<<<<<<< HEAD
     width: 95%;
     background-color: #eaddb6;
     display: flex;
@@ -51,12 +44,4 @@ const TaskSection = styled.div`
     border-radius: 15px;
     overflow-y: scroll;
     height: 75%;
-=======
-    display: flex;
-    border: 2px solid white;
-    border-radius: 15px;
-    height: 75%;
-    margin: 15px;
-
->>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
 `
