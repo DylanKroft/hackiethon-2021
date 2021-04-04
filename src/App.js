@@ -46,6 +46,9 @@ const Footer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+<<<<<<< HEAD
+  z-index: 1000;
+=======
 `
 
 const LoginBox = styled.div`
@@ -58,4 +61,5 @@ const LoginBox = styled.div`
      {
     }
 
+>>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
 `
