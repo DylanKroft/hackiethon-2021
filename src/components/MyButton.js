@@ -22,7 +22,7 @@ export default MyButton
 const Container = styled.div`
     background: #29b39e;
     margin: 2px;
-    margin-right: 10px;
+    margin-right: 0px;
     border-radius: 8px;
     border-width: 5px solid #22B14C;
     z-index: 1000;

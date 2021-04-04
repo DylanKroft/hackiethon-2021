@@ -68,6 +68,7 @@ const Container = styled.div`
      {  
         width: 90%;
         left: 5%;
+        right: 5%;
         top: 0%;
     }
 `

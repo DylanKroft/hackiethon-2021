@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import MyButton from './MyButton.js';
 import React, { useState, useEffect } from 'react';
 import AddTask from './AddTask';
-
+import LogoutButton from './LogoutButton.js'
 let buttonText = "Add Task"
 
 const Header = ({name, usrEmail}) => {
@@ -26,6 +26,7 @@ const Header = ({name, usrEmail}) => {
             <Heading>{name}'s Tasks</Heading>
             <Buttonbox>
                 <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>
+                <LogoutButton/>
             </Buttonbox>
 
         </Container>
@@ -60,5 +61,5 @@ const Buttonbox = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-right: 10px;
+    padding-right: 20px;
 `

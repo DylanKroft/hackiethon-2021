@@ -11,7 +11,7 @@ const Home = ({showTaskAdd}) => {
     return (
         isAuthenticated && (
             <div>
-                <Main>
+                <Main>         
                     <Profile usrName={user.name} usrEmail={user.email} loggedIn = {isAuthenticated} displayAddTask={showTaskAdd}/> 
                     <AddFriend></AddFriend>
                 </Main>

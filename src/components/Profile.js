@@ -38,6 +38,6 @@ const TaskSection = styled.div`
     display: flex;
     border: 2px solid white;
     border-radius: 15px;
-    height: 75%;
+    height: 85%;
     margin-left: 15px;
 `
