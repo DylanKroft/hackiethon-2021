@@ -1,11 +1,19 @@
 import styled from 'styled-components'
-import React, { useState } from 'react'; 
 import './AddTask.css'
 import panda from'../bamboo/panda.gif';
+import React, { useState, useEffect } from 'react';
+import { EasybaseProvider, useEasybase } from 'easybase-react';
 
-const AddTask = () => {
+
+const AddFriend = ( ) => {
 
     const [inputValue, setInputValue] = React.useState("");
+    const { Frame, sync, configureFrame } = useEasybase();
+
+    useEffect(() => {
+        configureFrame({limit: 20 });
+        sync();
+      }, []);
 
     const onChangeHandler = event => {
         setInputValue(event.target.value);
@@ -14,6 +22,17 @@ const AddTask = () => {
     const addTask = (e) => {
         e.preventDefault();
         console.log(inputValue);
+
+        for (let i = 0; i < Frame().length; i++){
+
+            console.log("line 28: ", Frame()[i].name)
+            console.log("line 27:", inputValue)
+            if (inputValue == Frame()[i].name){
+                console.log("here 31:", Frame()[i])
+                var data = Frame()[i];
+            }
+        }
+
         setInputValue("");
     }
 
@@ -42,7 +61,7 @@ const AddTask = () => {
     )
 }
 
-export default AddTask
+export default AddFriend;
 
 const Panda = styled.div`
 `
