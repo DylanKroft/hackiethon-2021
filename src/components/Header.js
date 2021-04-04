@@ -62,5 +62,4 @@ const Buttonbox = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-right: 20px;
 `

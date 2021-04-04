@@ -10,7 +10,7 @@ const LoginButton = () => {
 
     return (
         <button class="button buttonBox" onClick={() => loginWithRedirect()}>
-            Begin
+            BEGIN
         </button>
     )
 }
