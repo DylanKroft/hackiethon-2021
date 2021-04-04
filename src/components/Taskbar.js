@@ -28,7 +28,7 @@ const Taskbar = ({email, loggedIn}) => {
         return (
             <Container>
             {tasks.map((ele,i) => (
-                    <Task taskText={ele} task={tasks} id={i} />
+                    <Task em={email} taskText={ele} id={i} />
                 ))}
 
             </Container>
@@ -44,6 +44,7 @@ const Container = styled.div`
     max-height: 650px;
     min-width: 300px;
     max-width: 500px;
+    min-height: 600px;
     padding-left: 10px;     
     margin: 0;
     overflow-y: scroll;

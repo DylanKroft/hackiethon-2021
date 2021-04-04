@@ -40,4 +40,5 @@ const TaskSection = styled.div`
     width: 100%;
     background-color: #eaddb6;
     display: flex;
+    border: 1px solid red;
 `
