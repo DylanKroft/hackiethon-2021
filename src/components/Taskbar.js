@@ -45,24 +45,16 @@ const Taskbar = ({email, loggedIn}) => {
 export default Taskbar
 
 const Container = styled.div`
-    width: 90%;
-<<<<<<< HEAD
+    width: 100%;
     padding: 10px;
     max-height: 600px;
-=======
->>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
     min-width: 300px;
     max-width: 500px;
     margin: 0;
     overflow-y: scroll;
     overflow-x: hidden;
     justify-content: flex-end;
-<<<<<<< HEAD
     flex-direction: column;    
-=======
-    flex-direction: column;
-    padding: 10px;
->>>>>>> 3d0b29d97b0d084062cdcf9a3668955b64f6b37f
 `
 
 
