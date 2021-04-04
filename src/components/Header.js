@@ -3,13 +3,15 @@ import MyButton from './MyButton.js';
 import React, { useState, useEffect } from 'react';
 import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
-import DisplayFriend from './DisplayFriend';
+import DisplayFriend from './DisplayFriend.js';
+import AddChallenge from './AddChallenge.js'
 
 let buttonText = "Add Task"
 
 const Header = ({del, name, usrEmail, log, friend}) => {
 
     const [showAdd, setShowAdd] = useState(false);
+    const [showChal, setShowChal] = useState(true);
 
     const handleClick = () => {
         setShowAdd(!showAdd);
@@ -25,6 +27,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 {showAdd && <AddTask displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
+
                 <Heading>{name}'s Tasks</Heading>
                 <Buttonbox>
                     <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>
@@ -38,6 +41,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
+                {showChal && <AddChallenge friendEmail={usrEmail}/>}
                 <But onClick={del}>
                     Abandon              
                 </But>

@@ -26,12 +26,14 @@ const AddTask = ( {email, loggedIn, displayAdd}) => {
 
     const addTask = (e) => {
         e.preventDefault();
-        console.log("HIIII" + data.description)
+
         if (data.description != "") {
-            data.description = data.description + "," + inputValue;
+            data.description = data.description + inputValue + ",";
         } else {
             data.description = inputValue + ",";
         }
+
+        console.log(data.description);
         sync();
         displayAdd();
         setInputValue("");
