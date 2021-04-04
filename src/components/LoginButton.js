@@ -9,18 +9,10 @@ const LoginButton = () => {
     const { loginWithRedirect } = useAuth0();
 
     return (
-        <Container>
- 
-                <button class="button buttonBox" onClick={() => loginWithRedirect()}>
-                    Begin
-                </button>
-
-        </Container>
+        <button class="button buttonBox" onClick={() => loginWithRedirect()}>
+            Begin
+        </button>
     )
 }
 
 export default LoginButton
-
-const Container = styled.div`
-    border-radius: 100px;
-`
