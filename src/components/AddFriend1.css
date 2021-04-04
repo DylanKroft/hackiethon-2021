@@ -16,6 +16,10 @@ form {
   justify-content: flex-start;
 }
 
+input {
+  padding-left: 10px;
+}
+
 .panda {
   height: 10em;
 }

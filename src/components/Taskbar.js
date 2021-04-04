@@ -18,22 +18,19 @@ const Taskbar = ({name, email, loggedIn, friend}) => {
     //gets description for username
     if(loggedIn) {
         for (let  i = 0; i < Frame().length; i++) {
-
             if (Frame()[i].name == email) {
                 var name = Frame()[i];
-
                 if (Frame()[i].description != null){
                     tasks = Frame()[i].description.split(",")
                 }
             }
         }
-
         for (let i = 0; i < tasks.length; i ++){
             deleted_shit[i] = "";
         }
     }
 
-    if (loggedIn && (tasks.length > 0)) {
+    if (loggedIn && (tasks.length > 1)) {
         return (
             <Container>
             {tasks.filter(ele => ele != "").map((ele,i) => (
