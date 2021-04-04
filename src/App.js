@@ -29,7 +29,7 @@ function App() {
      return(
      <LoginBox>
         <Container>
-        <h1 class = "logo"> {a} </h1>
+          <h1 class = "logo"> {a} </h1>
           <LoginButton />
         </Container>
      </LoginBox>
