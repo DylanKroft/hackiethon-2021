@@ -28,7 +28,6 @@ const Container = styled.div`
     border-radius: 8px;
     border-width: 5px solid #ffa500;
     width: 100px;
-    margin-left: 20px;
 `
 const But = styled.div`
 transition: background-color 0.3s ease;

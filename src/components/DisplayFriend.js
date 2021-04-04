@@ -23,29 +23,36 @@ const DisplayFriend = () => {
         setInputValue(event.target.value);
       };
 
-
+    
+    const DeleteFriend = () => {
+        setInputValue("");
+        setFriendTasks([]);
+        setAddedValue(false);
+        setFriendName("");
+    }
+    
     const addFriend = (e) => {
 
         e.preventDefault();
-        console.log(inputValue);
-        console.log(added)
+
+        let count = 0;
 
         for (let i = 0; i < Frame().length; i++){
 
             if (inputValue == Frame()[i].name){
-                console.log("here 31:", Frame()[i])
                 let friendEmail = Frame()[i].name;
-                console.log("line 36:", Frame()[i].realname);
                 setAddedValue(true);
-                console.log("line 404004", Frame()[i])
                 setFriendTasks(friendEmail);
                 setFriendName(Frame()[i].realname)
-            }
+                count = 1;
+            } 
+        }
+
+        if (count != 1){
+            alert("Friend not found! Please try another email.")
         }
         setInputValue("");
     } 
-
-    console.log(added)
 
     if (!added){
         return (
@@ -76,11 +83,12 @@ const DisplayFriend = () => {
     else {
         return (
             <>
-                <Profile usrName={friendName} usrEmail={friendEmail} loggedIn={true} isFriend={true}/>
+                <Profile d={DeleteFriend} usrName={friendName} usrEmail={friendEmail} loggedIn={true} isFriend={true}/>
             </>
         )
     }
 }
+
 
 export default DisplayFriend
 
@@ -95,7 +103,7 @@ const FormBox = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-left: 20%;
+    margin-left: 22%;
 
 
     @media screen and (max-width: 800px) {

@@ -3,11 +3,26 @@ import MyButton from './MyButton.js';
 import React, { useState, useEffect } from 'react';
 import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
-let buttonText = "Add Task"
+import DisplayFriend from './DisplayFriend.js';
+import AddChallenge from './AddChallenge.js'
 
-const Header = ({name, usrEmail, log, friend}) => {
+let buttonText = "Add Task"
+let bText = "Challenge"
+
+const Header = ({del, name, usrEmail, log, friend}) => {
 
     const [showAdd, setShowAdd] = useState(false);
+    const [showChal, setShowChal] = useState(true);
+
+    const handleChal =() => {
+        setShowChal(!showChal);
+
+        if(showChal) {
+            bText = "Challenge";
+        } else {
+            bText = "Close";
+        }
+    }
 
     const handleClick = () => {
         setShowAdd(!showAdd);
@@ -22,10 +37,12 @@ const Header = ({name, usrEmail, log, friend}) => {
     if (!friend) {
         return (
             <Container>
-                {showAdd && <AddTask email={usrEmail} loggedIn={log} />}
+                {showAdd && <AddTask displayAdd={handleClick} email={usrEmail} loggedIn={log} />}
+                {showChal && <AddChallenge/>}
                 <Heading>{name}'s Tasks</Heading>
                 <Buttonbox>
-                    <MyButton ButtonText={buttonText} onSetAdd = {handleClick}/>
+                    <MyButton ButtonText={buttonText} onSetAdd={handleClick}/>
+                    <MyButton ButtonText={bText} onSetAdd={handleChal}/>
                     <LogoutButton/>
                 </Buttonbox>
     
@@ -36,6 +53,10 @@ const Header = ({name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
+                {showChal && <AddChallenge friendEmail={usrEmail}/>}
+                <But onClick={del}>
+                    Abandon              
+                </But>
             </Container>
         )
     }
@@ -70,4 +91,23 @@ const Buttonbox = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+`
+
+const But = styled.div`
+    width: 80px;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+ 
+    :hover {
+        cursor: pointer;
+        background: #ffb11b;
+        border-radius: 8px;
+    }
+
+
+    background-color: #ffa500;
+
 `

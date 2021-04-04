@@ -3,7 +3,7 @@ import './AddFriend1.css'
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
 
-const AddTask = ( {email, loggedIn}) => {
+const AddTask = ( {email, loggedIn, displayAdd}) => {
 
     const [inputValue, setInputValue] = React.useState("");
     const { Frame, sync, configureFrame } = useEasybase();
@@ -26,10 +26,17 @@ const AddTask = ( {email, loggedIn}) => {
 
     const addTask = (e) => {
         e.preventDefault();
-        console.log(inputValue);
-        setInputValue("");
-        data.description = data.description + "," + inputValue;
+
+        if (data.description != "") {
+            data.description = data.description + inputValue + ",";
+        } else {
+            data.description = inputValue + ",";
+        }
+
+        console.log(data.description);
         sync();
+        displayAdd();
+        setInputValue("");
     }
 
     return (

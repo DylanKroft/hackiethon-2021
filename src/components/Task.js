@@ -5,7 +5,7 @@ import { EasybaseProvider, useEasybase } from 'easybase-react';
 import Taskbar from './Taskbar';
 import ReactTooltip from 'react-tooltip';
 
-const Task = ({taskText, id, em, task, deleted_shit, name}) => {
+const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
     
     const { Frame, sync, configureFrame } = useEasybase();
 
@@ -18,19 +18,27 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
 
     const completeTask = () => {
 
+
+        console.log("Before", task)
+        console.log("Before: ", deleted_shit)
+
         if (!done){
             deleted_shit.splice(id, 1, task[id]);
             setDone(true)
         } else {
             deleted_shit.splice(id, 1, "");
             setDone(false)
-        }           
+        }     
+        console.log("after", task)     
+        console.log("after:" , deleted_shit) 
     }
 
     const grow = () => {
 
-        setDone(false)
         let modified = []
+
+        console.log("to be modified: ", task);
+        console.log("modified id ", id)
 
         for (let i = 0; i < task.length; i ++){
 
@@ -51,23 +59,43 @@ const Task = ({taskText, id, em, task, deleted_shit, name}) => {
                 newString += modified[i] + ",";
             }
         }
-            name.description = newString;
-            name.score += 1;
-            sync();
+        console.log(newString)
+            if (done){
+                name.description = newString;
+                name.score += 1;
+                sync();
+            }
+            setDone(false);
         }
 
 
-        return (
-            <Container d={done}>
-                <CompleteButton d={done}>
-                    <Circle onClick={completeTask} d={done}/>
-                </CompleteButton>
-                <Text d={done}>{taskText}</Text>
-                <But d={done}>
-                    <Circle onClick={grow}></Circle>
+        if (!isFriend){
+            return (
+                <Container d={done}>
+                    <CompleteButton d={done}>
+                        <Circle onClick={completeTask} d={done}/>
+                    </CompleteButton>
+                    <Text d={done}>{taskText}</Text>
+                    <But d={done}>
+                        <Circle onClick={grow}></Circle>
+                        </But>
+                </Container> 
+            )
+        }
+
+        else {
+            return (
+                <Container d={done}>
+                    <CompleteButton d={done}>
+                    </CompleteButton>
+                    <Text d={done}>{taskText}</Text>
+                    <But d={done}>
                     </But>
-            </Container> 
-        )
+                </Container> 
+            )
+
+        }
+
 }
 
 export default Task
