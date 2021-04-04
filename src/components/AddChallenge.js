@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import './AddFriend1.css'
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
+import './AddChallenge.css'
 
 const AddChallenge = ({ friendEmail }) => {
 
@@ -36,9 +37,9 @@ const AddChallenge = ({ friendEmail }) => {
     }
     return (
             <Container>
-                <button id={"Challenge_1"}onClick={sendData} value={"PushDown"}></button>
-                <button onClick={sendData} value={"PushSide"}></button>
-                <button onClick={sendData} value={"Push"}></button>
+                <button class="butt" id={"Challenge_1"}onClick={sendData} value={"PushDown"}></button>
+                <button class="butt" onClick={sendData} value={"PushSide"}></button>
+                <button class="butt" onClick={sendData} value={"Push"}></button>
             </Container>
     )
 }
