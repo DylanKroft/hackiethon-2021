@@ -2,12 +2,22 @@ input[type="text"] {
   width: 60%;
   height: 50px;
   font-size: 1.25em;
-  margin-left: 5%;
-  margin-right: 5%;
   font-weight: 600;
   box-sizing: border-box;
   border: none;
+  margin-right: 30px;
   border-radius: 10px 10px 10px 10px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.panda {
+  height: 8em;
 }
 
 .primary__btn {
