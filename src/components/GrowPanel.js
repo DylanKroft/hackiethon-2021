@@ -50,13 +50,13 @@ const GrowPanel = ({email, loggedIn}) => {
 export default GrowPanel
 
 const Container = styled.div`
-    flex: 1;
+    flex: 2;
     height: 99.5%;
     width: 50%;
     min-width: 150px;
-    max-height: 650px;
     display: flex;
-    flex-direction: column-reverse;    overflow-y: scroll;
+    flex-direction: column-reverse;    
+    overflow-y: auto;
 `
 
 const Box = styled.div`
