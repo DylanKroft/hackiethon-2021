@@ -49,7 +49,7 @@ const DisplayFriend = () => {
         }
 
         if (count != 1){
-            alert("Friend not found! Please try another email")
+            alert("Friend not found! Please try another email.")
         }
         setInputValue("");
     } 
