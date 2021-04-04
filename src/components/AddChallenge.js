@@ -11,7 +11,6 @@ const AddChallenge = ({ friendEmail }) => {
         configureFrame({limit: 20 });
         sync();
     }, []);
-
     var friendData = "";
     for (let i = 0; i < Frame().length; i++){
 

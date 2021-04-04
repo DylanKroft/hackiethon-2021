@@ -11,9 +11,10 @@ let bText = "Challenge"
 
 const Header = ({del, name, usrEmail, log, friend}) => {
 
-    const [showAdd, setShowAdd] = useState(false);
-    const [showChal, setShowChal] = useState(false);
+    console.log("l14: ", usrEmail);
 
+    const [showChal, setShowChal] = useState(usrEmail);
+    const [showAdd, setShowAdd] = useState(false);
     const handleChal =() => {
         if(showAdd == false) {
             setShowChal(!showChal);
@@ -58,7 +59,7 @@ const Header = ({del, name, usrEmail, log, friend}) => {
         return (
             <Container>
                 <Heading>{name}'s Tasks</Heading>
-                {showChal && <AddChallenge friendEmail={usrEmail}/>}
+                {true && <AddChallenge friendEmail={usrEmail}/>}
                 <But onClick={del}>
                     Abandon              
                 </But>
