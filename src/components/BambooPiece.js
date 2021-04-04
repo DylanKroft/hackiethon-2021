@@ -6,9 +6,9 @@ import root from'../bamboo/root.png';
 
 import styled from 'styled-components'
 
-const BambooPiece = () => {
+const BambooPiece = ({pic}) => {
     return (
-        <Img>
+        <Img p={pic}>
         </Img>
     )
 }
@@ -16,7 +16,7 @@ const BambooPiece = () => {
 export default BambooPiece
 
 const Img = styled.div`    
-    background-image: url(${b1});
+    background-image: url(${({p}) => p});
     background-size:contain;
     width: 100%;
     height: 100px;

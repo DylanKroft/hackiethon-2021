@@ -2,12 +2,17 @@ import styled from 'styled-components'
 import BambooPiece from "./BambooPiece.js"
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 import React, { useState, useEffect } from 'react';
-
+import b1 from'../bamboo/bamboo1.png';
+import b2 from'../bamboo/bamboo2.png';
+import b3 from'../bamboo/bamboo3.png';
+import b4 from'../bamboo/bamboo4.png';
+import root from'../bamboo/root.png';
 
     
 
 const GrowPanel = ({email, loggedIn}) => {
 
+    let bambooArray = [b1,b2,b3,b4]
     let bambooCount = 0;
     let bambooPieces =[];
     
@@ -26,15 +31,17 @@ const GrowPanel = ({email, loggedIn}) => {
         }
 
         for (let i = 0; i < bambooCount; i++) {
-            bambooPieces.push(<BambooPiece />);
+            let item = bambooArray[Math.floor(Math.random() * 4)];
+            bambooPieces.push(<BambooPiece pic={item}/>);
         }
     }
 
       
     return (
         <Container>
-            <Box>           
+            <Box>   
             {bambooPieces.map((ele) => ele)}
+            <BambooPiece pic={root}/>        
             </Box>
         </Container>
     )
