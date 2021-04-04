@@ -37,9 +37,10 @@ const AddChallenge = ({ friendEmail }) => {
     return (
             <Container>
                 <button id="Challenge_1" onClick={sendData} value={"Pushup"}></button>
-                <button onClick={sendData} value={"PushDown"}></button>
-                <button onClick={sendData} value={"PushSide"}></button>
-                <button onClick={sendData} value={"Push"}></button>
+                <button onClick={sendData} value={"Pushdown"}></button>
+                <button onClick={sendData} value={"Pushright"}></button>
+                <button onClick={sendData} value={"Pushleft"}></button>
+
             </Container>
     )
 }
