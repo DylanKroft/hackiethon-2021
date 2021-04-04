@@ -6,7 +6,7 @@ import Taskbar from './Taskbar';
 import ReactTooltip from 'react-tooltip';
 
 const Task = ({taskText, id, em, task, deleted_shit, name}) => {
-
+    console.log("43", task);
     const { Frame, sync, configureFrame } = useEasybase();
 
     useEffect(() => {

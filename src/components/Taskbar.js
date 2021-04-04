@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Task from './Task.js';
 import { EasybaseProvider, useEasybase } from 'easybase-react';
 
-const Taskbar = ({email, loggedIn}) => {
+const Taskbar = ({name, email, loggedIn}) => {
 
     const { Frame, sync, configureFrame } = useEasybase();
 
@@ -15,12 +15,20 @@ const Taskbar = ({email, loggedIn}) => {
     let tasks = [];
     let deleted_shit = [];
 
+
     //gets description for username
     if(loggedIn) {
         for (let  i = 0; i < Frame().length; i++) {
+            console.log("line 22: ", Frame()[i])
+            console.log(email)
+
             if (Frame()[i].name == email) {
                 var name = Frame()[i];
-                tasks = Frame()[i].description.split(",")
+                console.log("line 24:", Frame()[i])
+
+                if (Frame()[i].description != null){
+                    tasks = Frame()[i].description.split(",")
+                }
             }
         }
 
