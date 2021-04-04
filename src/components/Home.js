@@ -22,7 +22,7 @@ const Home = ({showTaskAdd}) => {
     for (let i = 0; i < Frame().length; i++) {
 
         if (user.email == Frame()[i].name) {
-            usrFound == true;
+            usrFound = true;
         }
     }
 
