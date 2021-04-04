@@ -5,6 +5,7 @@ import AddTask from './AddTask';
 import LogoutButton from './LogoutButton.js'
 import DisplayFriend from './DisplayFriend.js';
 import AddChallenge from './AddChallenge.js'
+import Tooltip from "@material-ui/core/Tooltip";
 
 let buttonText = "Add Task"
 let bText = "Challenge"
@@ -68,8 +69,12 @@ const Header = ({del, name, usrEmail, log, friend}) => {
 
                 <MyButton ButtonText={bText} onSetAdd={handleChal}/>
                 {showChal && <AddChallenge friendEmail={usrEmail} ownerEmail={ownerEmail}/>}
-
+                <Tooltip
+                title="Click here to abandon your friend and be productive with another one!."
+                placement="top"
+            >
                 <But onClick={del}> Abandon </But>
+            </Tooltip>
                 </Buttonbox>
              </Container>
         )
@@ -117,7 +122,7 @@ const But = styled.div`
     border-radius: 8px;
     font-size: 0.8em;
     line-height: 1.4em;
-    height: 17px;
+    height: 16.6px;
     margin-right: 20px;
  
     :hover {

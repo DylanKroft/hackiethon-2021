@@ -70,7 +70,7 @@ const Task = ({taskText, id, em, task, deleted_shit, name, isFriend}) => {
                 <Container d={done}>
                     <CompleteButton d={done}>
                     <Tooltip
-                title="Click her to mark the task as complete."
+                title="Click here to mark the task as complete."
                 placement="top"
             >
             <Circle onClick={completeTask} d={done}/>
