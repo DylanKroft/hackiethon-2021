@@ -1,16 +1,24 @@
 import styled from 'styled-components'
 import MyButton from './MyButton'
 import React, { useState, useEffect } from 'react';
+import { EasybaseProvider, useEasybase } from 'easybase-react';
+import Taskbar from './Taskbar';
 
 
-const Task = ({taskText, id, em, task, deleted_shit}) => {
+const Task = ({taskText, id, em, task, deleted_shit, name}) => {
 
+    const { Frame, sync, configureFrame } = useEasybase();
+
+    useEffect(() => {
+        configureFrame({limit: 20 });
+        sync();
+      }, []);
 
     var ID = id;
     const [done, setDone] = useState(false);
 
-    console.log(task)
-    console.log(deleted_shit)
+    // console.log(task)
+    // console.log(deleted_shit)
 
     const completeTask = () => {
  
@@ -25,6 +33,31 @@ const Task = ({taskText, id, em, task, deleted_shit}) => {
             deleted_shit.splice(id, 1, "")
             setDone(false)
         } 
+        let modifiedDescription = change_description(task);
+        name.description = modifiedDescription;
+        sync();
+    }
+
+    console.log(name)
+
+
+
+    function change_description( array ){
+
+        let newString = "";
+        
+        for (let i = 0; i < array.length; i++){
+            if (array[i] != "") {
+
+                if (newString.length == 0){
+                    newString = array[i] + ",";
+                } else {
+                    newString += array[i] + ",";
+                }
+            }
+        }
+        console.log("stirng changed: ", newString)
+        return newString;
     }
 
 
