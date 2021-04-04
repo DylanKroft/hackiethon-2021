@@ -1,11 +1,11 @@
 import music from "../nature.mp3";
 import Sound from 'react-sound';
 
-const PlaySound = (
+const PlaySound = ({
     handleSongLoading,
     handleSongPlaying,
     handleSongFinishedPlaying
-) => {
+}) => {
     return(
         <div>
             <Sound

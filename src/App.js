@@ -9,6 +9,7 @@ import ebconfig from './ebconfig';
 import { useAuth0 } from '@auth0/auth0-react';
 import bg from'./bamboo/Login.png';
 import panda from'./bamboo/panda.gif';
+import PlaySound from'./components/Sound'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
      <LoginBox>
         <Container>
         <h1 class = "logo">{a}</h1>
+        <PlaySound/>
           <Panda>
                 <img className="panda" src={panda} alt="loading..." />
             </Panda>
@@ -89,5 +91,5 @@ box-shadow: 0px 0px 11px -4px rgba(71,71,71,1);
 const Panda = styled.div`
 height: 0px;
 position: relative;
-top: -110px;
+top: -130px;
 `
